@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @classroom.name %>
+</p>
+
+<p>
+  <strong>Building:</strong>
+  <%= @classroom.building_id %>
+</p>
+
+<p>
+  <strong>Occupancy:</strong>
+  <%= @classroom.occupancy %>
+</p>
+
+<table>
+	<tr>
+		<% for picture in @classroom.pictures %>
+			<td>
+				<%= image_tag picture.image_url(:thumb).to_s %>
+			</td>
+		<% end %>
+	</tr>
+</table>
+
+<%= link_to 'Add Picture', new_picture_path(:classroom_id => @classroom) %> |
+<%= link_to 'Edit', edit_classroom_path(@classroom) %> |
+<%= link_to 'Back', classrooms_path %>

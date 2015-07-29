@@ -1,0 +1,1084 @@
+  [1m[36m (2.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateImages (20150729205745)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "path" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150729205745"]]
+  [1m[35m (1.9ms)[0m  commit transaction
+Migrating to CreateClassrooms (20150729210603)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "classrooms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "building_id" varchar, "occupancy" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150729210603"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20150729211037)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150729211037"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "classrooms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "building_id" varchar, "occupancy" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  CREATE TABLE "images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "path" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.6ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150729211037')
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150729210603')[0m
+  [1m[35m (1.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150729205745')
+  [1m[36m (1.5ms)[0m  [1mCREATE TABLE "classrooms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "building_id" varchar, "occupancy" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.7ms)[0m  CREATE TABLE "images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "path" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.4ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.6ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150729211037')
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150729210603')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150729205745')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "classrooms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "building_id" varchar, "occupancy" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.6ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150729211037')[0m
+  [1m[35m (1.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150729210603')
+  [1m[36m (1.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150729205745')[0m
+  [1m[35m (1.7ms)[0m  CREATE TABLE "classrooms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "building_id" varchar, "occupancy" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150729211037')
+  [1m[36m (1.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150729210603')[0m
+  [1m[35m (1.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150729205745')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePictures (20150729212954)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "pictures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150729212954"]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+Migrating to AddImageToPictures (20150729213018)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "pictures" ADD "image" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150729213018"]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-29 15:40:07 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (uninitialized constant ClassroomController):
+  activesupport (4.2.1) lib/active_support/inflector/methods.rb:261:in `const_get'
+  activesupport (4.2.1) lib/active_support/inflector/methods.rb:261:in `block in constantize'
+  activesupport (4.2.1) lib/active_support/inflector/methods.rb:259:in `each'
+  activesupport (4.2.1) lib/active_support/inflector/methods.rb:259:in `inject'
+  activesupport (4.2.1) lib/active_support/inflector/methods.rb:259:in `constantize'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:70:in `controller_reference'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:60:in `controller'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:39:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:819:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:649:in `call'
+  activerecord (4.2.1) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (41.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (39.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (114.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (15.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (30.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-29 15:40:31 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ClassroomsController#index as HTML
+  [1m[35mClassroom Load (0.2ms)[0m  SELECT "classrooms".* FROM "classrooms"
+  Rendered classrooms/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 1100ms (Views: 1091.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/classrooms.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-29 15:40:33 -0600
+
+
+Started GET "/assets/pictures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-29 15:40:33 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-07-29 15:40:33 -0600
+
+
+Started GET "/assets/pictures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-29 15:40:33 -0600
+
+
+Started GET "/assets/scaffolds.self-a2c40d5b3e1c6579311c028de24a0b0bddb7746e4b006d24ff2c4bc817c8715a.css?body=1" for 127.0.0.1 at 2015-07-29 15:40:33 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-07-29 15:40:33 -0600
+
+
+Started GET "/assets/classrooms.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-29 15:40:33 -0600
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 127.0.0.1 at 2015-07-29 15:40:33 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-07-29 15:40:33 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-07-29 15:40:33 -0600
+
+
+Started GET "/classrooms/new" for 127.0.0.1 at 2015-07-29 16:21:03 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ClassroomsController#new as HTML
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.3ms)
+
+NoMethodError (undefined method `attr_accessible' for #<Class:0x0000000505c6e8>):
+  app/models/classroom.rb:2:in `<class:Classroom>'
+  app/models/classroom.rb:1:in `<top (required)>'
+  app/controllers/classrooms_controller.rb:19:in `new'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.1ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (24.9ms)
+
+
+Started GET "/classrooms/new" for 127.0.0.1 at 2015-07-29 16:21:03 -0600
+Processing by ClassroomsController#new as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `attr_accessible' for #<Class:0x00000004fc4a78>):
+  app/models/classroom.rb:2:in `<class:Classroom>'
+  app/models/classroom.rb:1:in `<top (required)>'
+  app/controllers/classrooms_controller.rb:19:in `new'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (28.2ms)
+
+
+Started GET "/classrooms/new" for 127.0.0.1 at 2015-07-29 16:21:46 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ClassroomsController#new as HTML
+  Rendered classrooms/_form.html.erb (72.1ms)
+  Rendered classrooms/new.html.erb within layouts/application (75.2ms)
+Completed 200 OK in 294ms (Views: 231.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/classrooms.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-29 16:21:46 -0600
+
+
+Started GET "/assets/pictures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-07-29 16:21:46 -0600
+
+
+Started GET "/assets/scaffolds.self-a2c40d5b3e1c6579311c028de24a0b0bddb7746e4b006d24ff2c4bc817c8715a.css?body=1" for 127.0.0.1 at 2015-07-29 16:21:46 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-07-29 16:21:46 -0600
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 127.0.0.1 at 2015-07-29 16:21:46 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-07-29 16:21:46 -0600
+
+
+Started GET "/assets/classrooms.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-29 16:21:46 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-07-29 16:21:46 -0600
+
+
+Started GET "/assets/pictures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-07-29 16:21:46 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-07-29 16:21:46 -0600
+
+
+Started POST "/classrooms" for 127.0.0.1 at 2015-07-29 16:22:14 -0600
+Processing by ClassroomsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L44VVYJM8jlkWoIulnq9qRkiLQvGW3c6GVf3OFrPjAYZuwABU+ixKwJWHMeu/Ssknskw2pkDlpktYO97kI8XZw==", "classroom"=>{"name"=>"LL125", "building_id"=>"Lind Lecture", "occupancy"=>"50"}, "commit"=>"Create Classroom"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "classrooms" ("name", "building_id", "occupancy", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "LL125"], ["building_id", "Lind Lecture"], ["occupancy", 50], ["created_at", "2015-07-29 22:22:14.963421"], ["updated_at", "2015-07-29 22:22:14.963421"]]
+  [1m[35m (2.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/classrooms/1
+Completed 302 Found in 10ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/classrooms/1" for 127.0.0.1 at 2015-07-29 16:22:14 -0600
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClassroom Load (0.2ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 500 Internal Server Error in 114ms (ActiveRecord: 0.4ms)
+
+NoMethodError (undefined method `attr_accessible' for #<Class:0x007f64863df1c0>):
+  app/models/picture.rb:2:in `<class:Picture>'
+  app/models/picture.rb:1:in `<top (required)>'
+  app/controllers/classrooms_controller.rb:14:in `show'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (13.1ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (23.9ms)
+
+
+Started POST "/classrooms" for 127.0.0.1 at 2015-07-29 16:23:38 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ClassroomsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L44VVYJM8jlkWoIulnq9qRkiLQvGW3c6GVf3OFrPjAYZuwABU+ixKwJWHMeu/Ssknskw2pkDlpktYO97kI8XZw==", "classroom"=>{"name"=>"LL125", "building_id"=>"Lind Lecture", "occupancy"=>"50"}, "commit"=>"Create Classroom"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "classrooms" ("name", "building_id", "occupancy", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "LL125"], ["building_id", "Lind Lecture"], ["occupancy", 50], ["created_at", "2015-07-29 22:23:38.596990"], ["updated_at", "2015-07-29 22:23:38.596990"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/classrooms/2
+Completed 302 Found in 23ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/classrooms/2" for 127.0.0.1 at 2015-07-29 16:23:38 -0600
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mClassroom Load (0.3ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36mPicture Load (0.7ms)[0m  [1mSELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?[0m  [[nil, 2]]
+SQLite3::SQLException: no such column: pictures.classroom_id: SELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?
+  Rendered classrooms/show.html.erb within layouts/application (6.0ms)
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 1.1ms)
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: pictures.classroom_id: SELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?):
+    17: 
+    18: <table>
+    19: 	<tr>
+    20: 		<% for picture in @classroom.pictures %>
+    21: 			<td>
+    22: 				<%= image_tag picture.image_url.to_s %>
+    23: 			</td>
+  app/views/classrooms/show.html.erb:20:in `_app_views_classrooms_show_html_erb__1656758435355530205_26013080'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.1ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (26.7ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/classrooms/2" for 127.0.0.1 at 2015-07-29 16:43:12 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mClassroom Load (0.2ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mPicture Load (0.6ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  [[nil, 2]]
+SQLite3::SQLException: no such column: pictures.classroom_id: SELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?
+  Rendered classrooms/show.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 1.3ms)
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: pictures.classroom_id: SELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?):
+    17: 
+    18: <table>
+    19: 	<tr>
+    20: 		<% for picture in @classroom.pictures %>
+    21: 			<td>
+    22: 				<%= image_tag picture.image_url.to_s %>
+    23: 			</td>
+  app/views/classrooms/show.html.erb:20:in `_app_views_classrooms_show_html_erb___4561219368348226332_39700620'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.1ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (26.2ms)
+
+
+Started POST "/classrooms/console/repl_sessions/f8624434fcba9ba66c941da5af05f674/trace" for 127.0.0.1 at 2015-07-29 16:43:19 -0600
+
+
+Started POST "/classrooms" for 127.0.0.1 at 2015-07-29 16:43:27 -0600
+Processing by ClassroomsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L44VVYJM8jlkWoIulnq9qRkiLQvGW3c6GVf3OFrPjAYZuwABU+ixKwJWHMeu/Ssknskw2pkDlpktYO97kI8XZw==", "classroom"=>{"name"=>"LL125", "building_id"=>"Lind Lecture", "occupancy"=>"50"}, "commit"=>"Create Classroom"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "classrooms" ("name", "building_id", "occupancy", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "LL125"], ["building_id", "Lind Lecture"], ["occupancy", 50], ["created_at", "2015-07-29 22:43:27.431807"], ["updated_at", "2015-07-29 22:43:27.431807"]]
+  [1m[36m (3.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/classrooms/3
+Completed 302 Found in 12ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/classrooms/3" for 127.0.0.1 at 2015-07-29 16:43:27 -0600
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  [1m[35mPicture Load (0.7ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  [[nil, 3]]
+SQLite3::SQLException: no such column: pictures.classroom_id: SELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?
+  Rendered classrooms/show.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.8ms)
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: pictures.classroom_id: SELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?):
+    17: 
+    18: <table>
+    19: 	<tr>
+    20: 		<% for picture in @classroom.pictures %>
+    21: 			<td>
+    22: 				<%= image_tag picture.image_url.to_s %>
+    23: 			</td>
+  app/views/classrooms/show.html.erb:20:in `_app_views_classrooms_show_html_erb___4561219368348226332_39700620'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (20.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (24.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddClassroomToPictures (20150729224632)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "pictures" ADD "classroom_id" integer[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150729224632"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started POST "/classrooms" for 127.0.0.1 at 2015-07-29 16:46:53 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ClassroomsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L44VVYJM8jlkWoIulnq9qRkiLQvGW3c6GVf3OFrPjAYZuwABU+ixKwJWHMeu/Ssknskw2pkDlpktYO97kI8XZw==", "classroom"=>{"name"=>"LL125", "building_id"=>"Lind Lecture", "occupancy"=>"50"}, "commit"=>"Create Classroom"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "classrooms" ("name", "building_id", "occupancy", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "LL125"], ["building_id", "Lind Lecture"], ["occupancy", 50], ["created_at", "2015-07-29 22:46:53.615963"], ["updated_at", "2015-07-29 22:46:53.615963"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/classrooms/4
+Completed 302 Found in 26ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/classrooms/4" for 127.0.0.1 at 2015-07-29 16:46:53 -0600
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mClassroom Load (0.2ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", "4"]]
+  [1m[36mPicture Load (0.2ms)[0m  [1mSELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?[0m  [["classroom_id", 4]]
+  Rendered classrooms/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 185ms (Views: 165.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/classrooms/4/edit" for 127.0.0.1 at 2015-07-29 16:46:56 -0600
+Processing by ClassroomsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered classrooms/_form.html.erb (13.8ms)
+  Rendered classrooms/edit.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 54ms (Views: 52.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2015-07-29 16:46:58 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[36mClassroom Load (0.2ms)[0m  [1mSELECT "classrooms".* FROM "classrooms"[0m
+  Rendered classrooms/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 41ms (Views: 39.9ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/classrooms/1" for 127.0.0.1 at 2015-07-29 16:47:03 -0600
+Processing by ClassroomsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"DOIZMvSRRKDPq0yANTXwWuQ5ok1yNf75eaBpJVNzo7k61wxmJTUHsqmn0mkNsmbXY9K/nC1tH1pNl3FmmTM42A==", "id"=>"1"}
+  [1m[35mClassroom Load (0.2ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mPicture Load (0.1ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  [["classroom_id", 1]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "classrooms" WHERE "classrooms"."id" = ?[0m  [["id", 1]]
+  [1m[35m (1.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/classrooms
+Completed 302 Found in 6ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2015-07-29 16:47:03 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[36mClassroom Load (0.2ms)[0m  [1mSELECT "classrooms".* FROM "classrooms"[0m
+  Rendered classrooms/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 39ms (Views: 37.6ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/classrooms/2" for 127.0.0.1 at 2015-07-29 16:47:06 -0600
+Processing by ClassroomsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"95PmCHIBP5HWuUuVzY/CrOA/29ddUMVLxQ1TUI5/tVXBpvNco6V8g7C11Xz1CFQhZ9TGBgIIJOjxOksTRD8uNA==", "id"=>"2"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mPicture Load (0.1ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  [["classroom_id", 2]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "classrooms" WHERE "classrooms"."id" = ?[0m  [["id", 2]]
+  [1m[35m (3.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/classrooms
+Completed 302 Found in 9ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2015-07-29 16:47:06 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[36mClassroom Load (0.2ms)[0m  [1mSELECT "classrooms".* FROM "classrooms"[0m
+  Rendered classrooms/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 40ms (Views: 39.4ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/classrooms/3" for 127.0.0.1 at 2015-07-29 16:47:08 -0600
+Processing by ClassroomsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"hogqK+VOzUMdQ8YPxFY4TqAmkXw4FpOhgGyLrgeMTtiwvT9/NOqOUXtPWOb80a7DJ82MrWdOcgK0W5PtzczVuQ==", "id"=>"3"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mPicture Load (0.1ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  [["classroom_id", 3]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "classrooms" WHERE "classrooms"."id" = ?[0m  [["id", 3]]
+  [1m[35m (2.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/classrooms
+Completed 302 Found in 6ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2015-07-29 16:47:08 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[36mClassroom Load (0.2ms)[0m  [1mSELECT "classrooms".* FROM "classrooms"[0m
+  Rendered classrooms/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 98ms (Views: 97.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/classrooms/4" for 127.0.0.1 at 2015-07-29 16:47:10 -0600
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", "4"]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  [["classroom_id", 4]]
+  Rendered classrooms/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 41ms (Views: 39.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pictures/new?classroom_id=4" for 127.0.0.1 at 2015-07-29 16:47:12 -0600
+Processing by PicturesController#new as HTML
+  Parameters: {"classroom_id"=>"4"}
+  Rendered pictures/_form.html.erb (1.4ms)
+  Rendered pictures/new.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.1ms)
+
+SyntaxError (/home/mattcain/WSUCDB/app/views/pictures/_form.html.erb:1: syntax error, unexpected =>, expecting keyword_end
+...=  form_for(@picture), :html => {:multipart => true}  do |f|...
+...                               ^
+/home/mattcain/WSUCDB/app/views/pictures/_form.html.erb:1: syntax error, unexpected keyword_do_block, expecting keyword_end
+...tml => {:multipart => true}  do |f| @output_buffer.safe_appe...
+...                               ^
+/home/mattcain/WSUCDB/app/views/pictures/_form.html.erb:29: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  app/views/pictures/_form.html.erb:1: syntax error, unexpected =>, expecting keyword_end
+  app/views/pictures/_form.html.erb:1: syntax error, unexpected keyword_do_block, expecting keyword_end
+  app/views/pictures/_form.html.erb:29: syntax error, unexpected keyword_ensure, expecting end-of-input
+  app/views/pictures/new.html.erb:3:in `_app_views_pictures_new_html_erb___4387090975429032526_69858022878780'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (22.4ms)
+
+
+Started GET "/pictures/new?classroom_id=4" for 127.0.0.1 at 2015-07-29 16:47:13 -0600
+Processing by PicturesController#new as HTML
+  Parameters: {"classroom_id"=>"4"}
+  Rendered pictures/_form.html.erb (1.0ms)
+  Rendered pictures/new.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/mattcain/WSUCDB/app/views/pictures/_form.html.erb:1: syntax error, unexpected =>, expecting keyword_end
+...=  form_for(@picture), :html => {:multipart => true}  do |f|...
+...                               ^
+/home/mattcain/WSUCDB/app/views/pictures/_form.html.erb:1: syntax error, unexpected keyword_do_block, expecting keyword_end
+...tml => {:multipart => true}  do |f| @output_buffer.safe_appe...
+...                               ^
+/home/mattcain/WSUCDB/app/views/pictures/_form.html.erb:29: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  app/views/pictures/_form.html.erb:1: syntax error, unexpected =>, expecting keyword_end
+  app/views/pictures/_form.html.erb:1: syntax error, unexpected keyword_do_block, expecting keyword_end
+  app/views/pictures/_form.html.erb:29: syntax error, unexpected keyword_ensure, expecting end-of-input
+  app/views/pictures/new.html.erb:3:in `_app_views_pictures_new_html_erb___4387090975429032526_69858037718300'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (23.2ms)
+
+
+Started GET "/classrooms/4" for 127.0.0.1 at 2015-07-29 16:50:49 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mClassroom Load (0.2ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", "4"]]
+  [1m[35mPicture Load (0.2ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  [["classroom_id", 4]]
+  Rendered classrooms/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 201ms (Views: 160.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pictures/new?classroom_id=4" for 127.0.0.1 at 2015-07-29 16:50:51 -0600
+Processing by PicturesController#new as HTML
+  Parameters: {"classroom_id"=>"4"}
+  Rendered pictures/_form.html.erb (39.9ms)
+  Rendered pictures/new.html.erb within layouts/application (43.8ms)
+Completed 200 OK in 82ms (Views: 77.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-07-29 17:09:19 -0600
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Uoj5f76eWQJhN9oedDoqMDjJV7mDpBGoynvjRZMnkfNkvewrbzoaEAc7RPdMvby9vyJKaNz88Av+TPsGWWcKkg==", "picture"=>{"classroom_id"=>"4", "name"=>"LL_125_1", "image"=>#<ActionDispatch::Http::UploadedFile:0x000000029cd1d0 @tempfile=#<Tempfile:/tmp/RackMultipart20150729-31189-1vfmayn.jpeg>, @original_filename="LL125_1.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"LL125_1.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Picture"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  app/controllers/pictures_controller.rb:27:in `create'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (15.8ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x00000006231260 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x00000006230fb8 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x000000062423f8 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-07-29 17:10:43 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Uoj5f76eWQJhN9oedDoqMDjJV7mDpBGoynvjRZMnkfNkvewrbzoaEAc7RPdMvby9vyJKaNz88Av+TPsGWWcKkg==", "picture"=>{"classroom_id"=>"4", "name"=>"LL_125_1", "image"=>#<ActionDispatch::Http::UploadedFile:0x00000004ece7b8 @tempfile=#<Tempfile:/tmp/RackMultipart20150729-31822-1rssolj.jpeg>, @original_filename="LL125_1.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"LL125_1.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Picture"}
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.3ms)
+
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  app/controllers/pictures_controller.rb:27:in `create'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.1ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x000000057b9260 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x000000057b8fb8 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x000000057ca3f8 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-07-29 17:12:17 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Uoj5f76eWQJhN9oedDoqMDjJV7mDpBGoynvjRZMnkfNkvewrbzoaEAc7RPdMvby9vyJKaNz88Av+TPsGWWcKkg==", "picture"=>{"classroom_id"=>"4", "name"=>"LL_125_1", "image"=>#<ActionDispatch::Http::UploadedFile:0x000000052413a0 @tempfile=#<Tempfile:/tmp/RackMultipart20150729-31873-sf3vbc.jpeg>, @original_filename="LL125_1.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"LL125_1.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Picture"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.3ms)
+
+NoMethodError (undefined method `attr_accessible' for #<Class:0x000000051ff1f8>):
+  app/models/picture.rb:2:in `<class:Picture>'
+  app/models/picture.rb:1:in `<top (required)>'
+  app/controllers/pictures_controller.rb:27:in `create'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.9ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x00000005b77258 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x00000005b76fb0 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x00000005b74440 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-07-29 17:15:29 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Uoj5f76eWQJhN9oedDoqMDjJV7mDpBGoynvjRZMnkfNkvewrbzoaEAc7RPdMvby9vyJKaNz88Av+TPsGWWcKkg==", "picture"=>{"classroom_id"=>"4", "name"=>"LL_125_1", "image"=>#<ActionDispatch::Http::UploadedFile:0x00000004e352e8 @tempfile=#<Tempfile:/tmp/RackMultipart20150729-32003-t25f9b.jpeg>, @original_filename="LL125_1.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"LL125_1.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Picture"}
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.3ms)
+
+NoMethodError (undefined method `resize_to_fit' for #<ImageUploader::Uploader40710760:0x00000004be6488>):
+  app/controllers/pictures_controller.rb:27:in `create'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.0ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x000000057359d8 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x00000005735730 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x00000005746b70 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-07-29 17:18:05 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Uoj5f76eWQJhN9oedDoqMDjJV7mDpBGoynvjRZMnkfNkvewrbzoaEAc7RPdMvby9vyJKaNz88Av+TPsGWWcKkg==", "picture"=>{"classroom_id"=>"4", "name"=>"LL_125_1", "image"=>#<ActionDispatch::Http::UploadedFile:0x000000042db910 @tempfile=#<Tempfile:/tmp/RackMultipart20150729-32079-gypf9l.jpeg>, @original_filename="LL125_1.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"LL125_1.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Picture"}
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.4ms)
+
+NoMethodError (undefined method `resize_to_fit' for #<ImageUploader::Uploader34761000:0x00000004128b68>):
+  app/controllers/pictures_controller.rb:27:in `create'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.3ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x00000004c13488 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x00000004c131e0 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x00000004c10670 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-07-29 17:32:03 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Uoj5f76eWQJhN9oedDoqMDjJV7mDpBGoynvjRZMnkfNkvewrbzoaEAc7RPdMvby9vyJKaNz88Av+TPsGWWcKkg==", "picture"=>{"classroom_id"=>"4", "name"=>"LL_125_1", "image"=>#<ActionDispatch::Http::UploadedFile:0x00000004ef0e30 @tempfile=#<Tempfile:/tmp/RackMultipart20150729-32554-2pyvho.jpeg>, @original_filename="LL125_1.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"LL125_1.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Picture"}
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.4ms)
+
+NoMethodError (undefined method `resize_to_limit' for #<ImageUploader::Uploader41114200:0x00000004d3e3f8>):
+  app/controllers/pictures_controller.rb:27:in `create'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.4ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x000000055ec860 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x000000055ec5b8 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x000000055fd9f8 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-07-29 17:33:00 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Uoj5f76eWQJhN9oedDoqMDjJV7mDpBGoynvjRZMnkfNkvewrbzoaEAc7RPdMvby9vyJKaNz88Av+TPsGWWcKkg==", "picture"=>{"classroom_id"=>"4", "name"=>"LL_125_1", "image"=>#<ActionDispatch::Http::UploadedFile:0x00000004ed0590 @tempfile=#<Tempfile:/tmp/RackMultipart20150729-32585-1hs5mn0.jpeg>, @original_filename="LL125_1.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"LL125_1.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Picture"}
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.4ms)
+
+NoMethodError (undefined method `resize_to_limit' for #<ImageUploader::Uploader41040460:0x00000004d25178>):
+  app/controllers/pictures_controller.rb:27:in `create'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.5ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x000000055c87d0 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x000000055c8528 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x000000055dd950 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-07-29 17:34:18 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Uoj5f76eWQJhN9oedDoqMDjJV7mDpBGoynvjRZMnkfNkvewrbzoaEAc7RPdMvby9vyJKaNz88Av+TPsGWWcKkg==", "picture"=>{"classroom_id"=>"4", "name"=>"LL_125_1", "image"=>#<ActionDispatch::Http::UploadedFile:0x00000005f38108 @tempfile=#<Tempfile:/tmp/RackMultipart20150729-32631-bl6tkq.jpeg>, @original_filename="LL125_1.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"LL125_1.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Picture"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "pictures" ("name", "image", "classroom_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "LL_125_1"], ["image", "LL125_1.jpeg"], ["classroom_id", 4], ["created_at", "2015-07-29 23:34:19.585080"], ["updated_at", "2015-07-29 23:34:19.585080"]]
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 4]]
+Redirected to http://localhost:3000/classrooms/4
+Completed 302 Found in 525ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/classrooms/4" for 127.0.0.1 at 2015-07-29 17:34:19 -0600
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", "4"]]
+  [1m[35mPicture Load (0.3ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  [["classroom_id", 4]]
+  Rendered classrooms/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 186ms (Views: 172.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2015-07-29 17:34:34 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[36mClassroom Load (0.2ms)[0m  [1mSELECT "classrooms".* FROM "classrooms"[0m
+  Rendered classrooms/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 39ms (Views: 37.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/classrooms/4/edit" for 127.0.0.1 at 2015-07-29 17:34:38 -0600
+Processing by ClassroomsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered classrooms/_form.html.erb (13.0ms)
+  Rendered classrooms/edit.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 52ms (Views: 51.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2015-07-29 17:34:41 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[36mClassroom Load (0.2ms)[0m  [1mSELECT "classrooms".* FROM "classrooms"[0m
+  Rendered classrooms/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 35ms (Views: 34.7ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/classrooms/4" for 127.0.0.1 at 2015-07-29 17:34:45 -0600
+Processing by ClassroomsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FLCp/nbiAWYwBpL6wMuheW1VoFZiyDw4q0nHHwgLCa4ihbyqp0ZCdFYKDBP4TDf06r69hz2Q3Zufft9cwkuSzw==", "id"=>"4"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mPicture Load (0.1ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  [["classroom_id", 4]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "pictures" WHERE "pictures"."id" = ?[0m  [["id", 1]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "classrooms" WHERE "classrooms"."id" = ?  [["id", 4]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/classrooms
+Completed 302 Found in 9ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2015-07-29 17:34:45 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT "classrooms".* FROM "classrooms"
+  Rendered classrooms/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 38ms (Views: 37.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/classrooms/new" for 127.0.0.1 at 2015-07-29 17:34:47 -0600
+Processing by ClassroomsController#new as HTML
+  Rendered classrooms/_form.html.erb (2.0ms)
+  Rendered classrooms/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 45ms (Views: 44.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/classrooms" for 127.0.0.1 at 2015-07-29 17:34:58 -0600
+Processing by ClassroomsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Rp/pbjcCT9p9vLlsNWwL3W/SXYdfuz7a9i5rL88BSzBwqvw65qYMyBuwJ4UN651Q6DlAVgDj33nCGXNsBUHQUQ==", "classroom"=>{"name"=>"LL125", "building_id"=>"Lind Lecture", "occupancy"=>"25"}, "commit"=>"Create Classroom"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "classrooms" ("name", "building_id", "occupancy", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "LL125"], ["building_id", "Lind Lecture"], ["occupancy", 25], ["created_at", "2015-07-29 23:34:58.273635"], ["updated_at", "2015-07-29 23:34:58.273635"]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/classrooms/5
+Completed 302 Found in 6ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/classrooms/5" for 127.0.0.1 at 2015-07-29 17:34:58 -0600
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", "5"]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  [["classroom_id", 5]]
+  Rendered classrooms/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 38ms (Views: 35.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pictures/new?classroom_id=5" for 127.0.0.1 at 2015-07-29 17:34:59 -0600
+Processing by PicturesController#new as HTML
+  Parameters: {"classroom_id"=>"5"}
+  Rendered pictures/_form.html.erb (3.1ms)
+  Rendered pictures/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 42ms (Views: 40.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-07-29 17:37:58 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X50Ihif8G1FYjWaa3ada15ckBmOvgiU4DJJQ3kYKELRpqB3S9lhYQz6B+HPlIMxaEM8bsvDaxJs4pUidjEqL1Q==", "picture"=>{"classroom_id"=>"5", "name"=>"LL_125_1", "image"=>#<ActionDispatch::Http::UploadedFile:0x0000000469c680 @tempfile=#<Tempfile:/tmp/RackMultipart20150729-32801-hfhxdf.jpeg>, @original_filename="LL125_1.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"LL125_1.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Picture"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "pictures" ("name", "image", "classroom_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "LL_125_1"], ["image", "LL125_1.jpeg"], ["classroom_id", 5], ["created_at", "2015-07-29 23:37:59.375550"], ["updated_at", "2015-07-29 23:37:59.375550"]]
+  [1m[35m (1.8ms)[0m  commit transaction
+  [1m[36mClassroom Load (0.2ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 5]]
+Redirected to http://localhost:3000/classrooms/5
+Completed 302 Found in 354ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/classrooms/5" for 127.0.0.1 at 2015-07-29 17:37:59 -0600
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", "5"]]
+  [1m[35mPicture Load (0.2ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  [["classroom_id", 5]]
+  Rendered classrooms/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 163ms (Views: 153.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pictures/new?classroom_id=5" for 127.0.0.1 at 2015-07-29 17:38:03 -0600
+Processing by PicturesController#new as HTML
+  Parameters: {"classroom_id"=>"5"}
+  Rendered pictures/_form.html.erb (12.9ms)
+  Rendered pictures/new.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 52ms (Views: 51.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-07-29 17:38:20 -0600
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qN70gJPo9FzbA3sNY4zN7FXPg39zu1iqQj/ZfAPpNsye6+HUQky3Tr0P5eRbC1th0iSerizjuQl2CME/yamtrQ==", "picture"=>{"classroom_id"=>"5", "name"=>"LL_125_2", "image"=>#<ActionDispatch::Http::UploadedFile:0x000000010d6820 @tempfile=#<Tempfile:/tmp/RackMultipart20150729-32801-df2m0t.jpeg>, @original_filename="LL125_2.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"LL125_2.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Picture"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pictures" ("name", "image", "classroom_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "LL_125_2"], ["image", "LL125_2.jpeg"], ["classroom_id", 5], ["created_at", "2015-07-29 23:38:20.809773"], ["updated_at", "2015-07-29 23:38:20.809773"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 5]]
+Redirected to http://localhost:3000/classrooms/5
+Completed 302 Found in 298ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/classrooms/5" for 127.0.0.1 at 2015-07-29 17:38:20 -0600
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mClassroom Load (0.2ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", "5"]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?[0m  [["classroom_id", 5]]
+  Rendered classrooms/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 39ms (Views: 36.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2015-07-29 17:39:45 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[35mClassroom Load (0.2ms)[0m  SELECT "classrooms".* FROM "classrooms"
+  Rendered classrooms/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 38ms (Views: 37.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/classrooms/5" for 127.0.0.1 at 2015-07-29 17:39:47 -0600
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", "5"]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?[0m  [["classroom_id", 5]]
+  Rendered classrooms/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 37ms (Views: 35.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2015-07-29 17:39:48 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[35mClassroom Load (0.2ms)[0m  SELECT "classrooms".* FROM "classrooms"
+  Rendered classrooms/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 36ms (Views: 35.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/classrooms/new" for 127.0.0.1 at 2015-07-29 17:39:50 -0600
+Processing by ClassroomsController#new as HTML
+  Rendered classrooms/_form.html.erb (3.6ms)
+  Rendered classrooms/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 40ms (Views: 39.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/classrooms" for 127.0.0.1 at 2015-07-29 17:40:05 -0600
+Processing by ClassroomsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h5vIEbbRfQLNYnElXb6EK9XiPZ0mesML3MdWxQBaj3Kxrt1FZ3U+EKtu78xlORKmUgkgTHkiIqjo8E6GyhoUEw==", "classroom"=>{"name"=>"LL 126", "building_id"=>"Lind Lecture", "occupancy"=>"50"}, "commit"=>"Create Classroom"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "classrooms" ("name", "building_id", "occupancy", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "LL 126"], ["building_id", "Lind Lecture"], ["occupancy", 50], ["created_at", "2015-07-29 23:40:05.323202"], ["updated_at", "2015-07-29 23:40:05.323202"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/classrooms/6
+Completed 302 Found in 8ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/classrooms/6" for 127.0.0.1 at 2015-07-29 17:40:05 -0600
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", "6"]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  [["classroom_id", 6]]
+  Rendered classrooms/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 41ms (Views: 39.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pictures/new?classroom_id=6" for 127.0.0.1 at 2015-07-29 17:40:07 -0600
+Processing by PicturesController#new as HTML
+  Parameters: {"classroom_id"=>"6"}
+  Rendered pictures/_form.html.erb (1.4ms)
+  Rendered pictures/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 56ms (Views: 55.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pictures" for 127.0.0.1 at 2015-07-29 17:40:37 -0600
+Processing by PicturesController#index as HTML
+  [1m[36mPicture Load (0.2ms)[0m  [1mSELECT "pictures".* FROM "pictures"[0m
+  Rendered pictures/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 40ms (Views: 39.4ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/pictures/2" for 127.0.0.1 at 2015-07-29 17:40:45 -0600
+Processing by PicturesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ob7rH8wqkOkhXuwMleu+qBEkekLXvjTLKlHUHKqhMtKXi/5LHY7T+0dScuWtbCglls9nk4jm1WgeZsxfYOGpsw==", "id"=>"2"}
+  [1m[35mPicture Load (0.2ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "pictures" WHERE "pictures"."id" = ?  [["id", 2]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/pictures
+Completed 302 Found in 7ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/pictures" for 127.0.0.1 at 2015-07-29 17:40:45 -0600
+Processing by PicturesController#index as HTML
+  [1m[35mPicture Load (0.2ms)[0m  SELECT "pictures".* FROM "pictures"
+  Rendered pictures/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 48ms (Views: 47.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pictures/3" for 127.0.0.1 at 2015-07-29 17:40:50 -0600
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered pictures/show.html.erb within layouts/application (13.8ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined local variable or method `painting' for #<#<Class:0x007f219e364220>:0x00000004c3c4f0>):
+    1: <p id="notice"><%= notice %></p>
+    2: 
+    3: <%= image_tag painting.image_url(:thumb) if painting.image? %>
+    4: 
+    5: 
+    6: <%= link_to 'Edit', edit_picture_path(@picture) %> |
+  app/views/pictures/show.html.erb:3:in `_app_views_pictures_show_html_erb__2906705090881375227_39945980'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (10.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (22.4ms)
+
+
+Started GET "/pictures/3" for 127.0.0.1 at 2015-07-29 17:40:50 -0600
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered pictures/show.html.erb within layouts/application (9.6ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined local variable or method `painting' for #<#<Class:0x007f219e364220>:0x007f219eee3240>):
+    1: <p id="notice"><%= notice %></p>
+    2: 
+    3: <%= image_tag painting.image_url(:thumb) if painting.image? %>
+    4: 
+    5: 
+    6: <%= link_to 'Edit', edit_picture_path(@picture) %> |
+  app/views/pictures/show.html.erb:3:in `_app_views_pictures_show_html_erb__2906705090881375227_69891188526980'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (10.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (24.1ms)
+  [1m[36m (2.0ms)[0m  [1mCREATE TABLE "classrooms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "building_id" varchar, "occupancy" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  CREATE TABLE "pictures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "image" varchar, "classroom_id" integer) 
+  [1m[36m (1.6ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.6ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150729224632')
+  [1m[36m (1.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150729210603')[0m
+  [1m[35m (1.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150729212954')
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150729213018')[0m
+  [1m[35m (1.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150729211037')
+  [1m[36m (1.6ms)[0m  [1mCREATE TABLE "classrooms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "building_id" varchar, "occupancy" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "pictures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "image" varchar, "classroom_id" integer) 
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.3ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150729224632')
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150729210603')[0m
+  [1m[35m (1.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150729212954')
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150729213018')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150729211037')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
