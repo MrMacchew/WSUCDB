@@ -1,6 +1,7 @@
 class ClassroomsController < ApplicationController
   before_action :set_classroom, only: [:show, :edit, :update, :destroy]
 
+	before_action :require_user, only: [:new, :edit, :destroy]
   # GET /classrooms
   # GET /classrooms.json
   def index

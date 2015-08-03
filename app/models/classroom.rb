@@ -1,6 +1,5 @@
 class Classroom < ActiveRecord::Base
-	validate_presence_of :name
-	validate_uniqueness_of :name
+	validates :name, presence: true, uniqueness: true
 
 	has_many :pictures, dependent: :destroy
 	
