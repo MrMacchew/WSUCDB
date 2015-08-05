@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Classroom', new_classroom_path %>
+<% if current_user %><%= link_to 'New Classroom', new_classroom_path %><% end %>
