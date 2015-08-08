@@ -1,46 +1,27 @@
 /* My Software Catalog Application CSS */
 
-.admin {
-	display: none;
-	}
-
-div.my-overflow {
-	display: block;
-    display: -webkit-box;
-    /*max-width: 400px;*/
-    height: 55px;
-    /*margin: 0 auto;
-    font-size: 26px;*/
-    line-height: 1.4;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.CDB_HEADER {
+		text-align: center;
+		font-size: 36px;
+		font-family: 'tradegothicltstd-boldext', sans-serif;
+		background-color: purple;
+		color: white;
 }
 
-.table {
-	/*table-layout: fixed;*/
+div.wrapper {
+				position:inherit;
 }
 
-.vcenter {
-	position: relative;
-	top: 50%;
+.CDB_TH_NAME {
+	position: absolute;
+bottom: 30%;
+margin-left: auto;
+margin-right: auto;
+display: none;
+background-color: black;
+color: white;
+font-size: 30px;
+z-index: 2;
+opacity: .8;
 }
 
-.aTo {
-    width: 150px;
-}
-
-.aThrough {
-    width: 150px;
-}
-
-.anchorStyle:hover, .anchorStyle:focus {
-    background: transparent;
-}
-
-.myadminbutton {
-    position: absolute;
-    right: 0px;
-    padding-bottom: 15px;
-}

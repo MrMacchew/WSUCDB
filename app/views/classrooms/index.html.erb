@@ -1,11 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Classrooms</h1>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<ul class="nav navbar-nav">
+			<li><a href='#'>Filters <span class='glyphicon glyphicon-filter'></span></a></li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li>
+				<% if current_user %>
+						<%= current_user.email %> | 
+						<%= link_to "Log out", logout_path, method: "delete" %></li>
+				<% else %>
+						<%= link_to "Login <span class='glyphicon glyphicon-user'></span>".html_safe, 'login' %></li>
+				<% end %>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<h1 style="text-align:center">Listing Classrooms</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+			<th></th>			
+			<th>Name</th>
       <th>Building</th>
       <th>Occupancy</th>
       <th colspan="3"></th>
@@ -13,16 +32,30 @@
   </thead>
 
   <tbody>
-    <% @classrooms.each do |classroom| %>
+		<% if @classrooms.count == 0 %>
+						<div class="container">
+										<h2 style="text-align: center">No Classrooms are in the database at this time.</h2>
+			</div>
+		<% else %>
+		<% @classrooms.each do |classroom| %>
       <tr>
-        <td><%= classroom.name %></td>
+							<td>
+											<div>
+															<%= image_tag classroom.pictures.first.image_url(:thumb).to_s %>
+															<div class="CDB_TH_NAME"><%= classroom.name %>
+															</div>
+											</div>
+
+							</td>			
+				<td><%= classroom.name %></td>
         <td><%= classroom.building_id %></td>
         <td><%= classroom.occupancy %></td>
         <td><%= link_to 'Show', classroom %></td>
         <td><%= link_to 'Edit', edit_classroom_path(classroom) %></td>
         <td><%= link_to 'Destroy', classroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+</tr>
+		<% end %>
+		<% end %>
   </tbody>
 </table>
 
