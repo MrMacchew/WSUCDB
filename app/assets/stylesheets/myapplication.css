@@ -9,7 +9,7 @@
 }
 
 div.wrapper {
-				position:inherit;
+	position:inherit;
 }
 
 .CDB_TH_NAME {
@@ -23,5 +23,10 @@ color: white;
 font-size: 30px;
 z-index: 2;
 opacity: .8;
+height: 38px;
+}
+
+div.wrapper-content {
+	z-index: 3;
 }
 

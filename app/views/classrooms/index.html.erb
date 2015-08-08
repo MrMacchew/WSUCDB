@@ -39,15 +39,17 @@
 		<% else %>
 		<% @classrooms.each do |classroom| %>
       <tr>
-							<td>
-											<div>
-															<%= image_tag classroom.pictures.first.image_url(:thumb).to_s %>
-															<div class="CDB_TH_NAME"><%= classroom.name %>
-															</div>
-											</div>
-
-							</td>			
-				<td><%= classroom.name %></td>
+		<td>
+			<div class='wrapper'>
+				<%= image_tag classroom.pictures.first.image_url(:thumb).to_s %>
+				<div class="CDB_TH_NAME">
+					<div class="wrapper-content">
+						<%= classroom.name %>
+					</div>
+				</div>
+			</div>
+		</td>			
+		<td><%= classroom.name %></td>
         <td><%= classroom.building_id %></td>
         <td><%= classroom.occupancy %></td>
         <td><%= link_to 'Show', classroom %></td>

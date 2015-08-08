@@ -3898,3 +3898,775 @@ Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde45
 
 
 Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-08-07 22:58:07 -0600
+
+
+Started GET "/" for ::1 at 2015-08-08 00:10:22 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ClassroomsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "classrooms"
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT "classrooms".* FROM "classrooms"[0m
+  [1m[35mPicture Load (0.2ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 1]]
+  Rendered classrooms/index.html.erb within layouts/application (134.1ms)
+Completed 200 OK in 3735ms (Views: 3714.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/myapplication.self-aeb0c0195f612a09e93feeec2939b6a9a798a9233446b5f1af2f3810b5b04e7a.css?body=1" for ::1 at 2015-08-08 00:10:27 -0600
+
+
+Started GET "/assets/myapplication.self-2d872a927e354b8d3431bc7b0b0106f462c2903d3710cc399271c5b9267887be.js?body=1" for ::1 at 2015-08-08 00:10:27 -0600
+
+
+Started GET "/" for ::1 at 2015-08-08 00:14:46 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "classrooms"[0m
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT "classrooms".* FROM "classrooms"
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 1]]
+  Rendered classrooms/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 217ms (Views: 216.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/apps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:14:46 -0600
+
+
+Started GET "/assets/classrooms.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:14:46 -0600
+
+
+Started GET "/assets/myapplication.self-aeb0c0195f612a09e93feeec2939b6a9a798a9233446b5f1af2f3810b5b04e7a.css?body=1" for ::1 at 2015-08-08 00:14:46 -0600
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:14:46 -0600
+
+
+Started GET "/assets/upload.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:14:46 -0600
+
+
+Started GET "/assets/scaffolds.self-862f15e381409402b7d47f349e8b99a0f7d2e27b7cc21d55c6177cc1e0d80834.css?body=1" for ::1 at 2015-08-08 00:14:46 -0600
+
+
+Started GET "/assets/pictures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:14:46 -0600
+
+
+Started GET "/assets/application.self-2f726a7004baf2546c582b3dabb1bb561a97027ed24de72dad49de20d81a0c32.css?body=1" for ::1 at 2015-08-08 00:14:46 -0600
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:14:46 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-08 00:14:46 -0600
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-08 00:14:47 -0600
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2015-08-08 00:14:47 -0600
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2015-08-08 00:14:47 -0600
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2015-08-08 00:14:47 -0600
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2015-08-08 00:14:47 -0600
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2015-08-08 00:14:47 -0600
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2015-08-08 00:14:47 -0600
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2015-08-08 00:14:47 -0600
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2015-08-08 00:14:47 -0600
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2015-08-08 00:14:47 -0600
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2015-08-08 00:14:47 -0600
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2015-08-08 00:14:47 -0600
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2015-08-08 00:14:47 -0600
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-08-08 00:14:47 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-08 00:14:47 -0600
+
+
+Started GET "/assets/apps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:14:47 -0600
+
+
+Started GET "/assets/classrooms.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:14:47 -0600
+
+
+Started GET "/assets/myapplication.self-95662f5481d7b9deb802dce74ecb32dda1248ebd786f068080026708a4ba6311.js?body=1" for ::1 at 2015-08-08 00:14:47 -0600
+
+
+Started GET "/assets/pictures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:14:47 -0600
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:14:47 -0600
+
+
+Started GET "/assets/upload.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:14:47 -0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:14:47 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-08-08 00:14:47 -0600
+
+
+Started GET "/" for ::1 at 2015-08-08 00:18:40 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "classrooms"
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT "classrooms".* FROM "classrooms"[0m
+  [1m[35mPicture Load (0.2ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 1]]
+  Rendered classrooms/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 208ms (Views: 207.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/apps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:18:41 -0600
+
+
+Started GET "/assets/classrooms.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:18:41 -0600
+
+
+Started GET "/assets/myapplication.self-aeb0c0195f612a09e93feeec2939b6a9a798a9233446b5f1af2f3810b5b04e7a.css?body=1" for ::1 at 2015-08-08 00:18:41 -0600
+
+
+Started GET "/assets/pictures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:18:41 -0600
+
+
+Started GET "/assets/upload.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:18:41 -0600
+
+
+Started GET "/assets/scaffolds.self-862f15e381409402b7d47f349e8b99a0f7d2e27b7cc21d55c6177cc1e0d80834.css?body=1" for ::1 at 2015-08-08 00:18:41 -0600
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:18:41 -0600
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:18:41 -0600
+
+
+Started GET "/assets/application.self-2f726a7004baf2546c582b3dabb1bb561a97027ed24de72dad49de20d81a0c32.css?body=1" for ::1 at 2015-08-08 00:18:41 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-08 00:18:41 -0600
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-08 00:18:41 -0600
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2015-08-08 00:18:41 -0600
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2015-08-08 00:18:41 -0600
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2015-08-08 00:18:41 -0600
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2015-08-08 00:18:41 -0600
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2015-08-08 00:18:41 -0600
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2015-08-08 00:18:41 -0600
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2015-08-08 00:18:41 -0600
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2015-08-08 00:18:41 -0600
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2015-08-08 00:18:41 -0600
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2015-08-08 00:18:41 -0600
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2015-08-08 00:18:41 -0600
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2015-08-08 00:18:41 -0600
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-08-08 00:18:41 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-08 00:18:41 -0600
+
+
+Started GET "/assets/apps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:18:41 -0600
+
+
+Started GET "/assets/classrooms.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:18:41 -0600
+
+
+Started GET "/assets/myapplication.self-ebdb3123b352a7824cfe26c555a7bffb746bcc9392a7a28ee188dfe3a76979b5.js?body=1" for ::1 at 2015-08-08 00:18:41 -0600
+
+
+Started GET "/assets/pictures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:18:41 -0600
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:18:41 -0600
+
+
+Started GET "/assets/upload.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:18:41 -0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:18:41 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-08-08 00:18:41 -0600
+
+
+Started GET "/" for ::1 at 2015-08-08 00:18:51 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "classrooms"[0m
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT "classrooms".* FROM "classrooms"
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 1]]
+  Rendered classrooms/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 101ms (Views: 100.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/apps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:18:51 -0600
+
+
+Started GET "/assets/pictures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:18:51 -0600
+
+
+Started GET "/assets/myapplication.self-aeb0c0195f612a09e93feeec2939b6a9a798a9233446b5f1af2f3810b5b04e7a.css?body=1" for ::1 at 2015-08-08 00:18:51 -0600
+
+
+Started GET "/assets/classrooms.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:18:51 -0600
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:18:51 -0600
+
+
+Started GET "/assets/scaffolds.self-862f15e381409402b7d47f349e8b99a0f7d2e27b7cc21d55c6177cc1e0d80834.css?body=1" for ::1 at 2015-08-08 00:18:51 -0600
+
+
+Started GET "/assets/upload.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:18:51 -0600
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:18:51 -0600
+
+
+Started GET "/assets/application.self-2f726a7004baf2546c582b3dabb1bb561a97027ed24de72dad49de20d81a0c32.css?body=1" for ::1 at 2015-08-08 00:18:51 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-08 00:18:51 -0600
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-08 00:18:51 -0600
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2015-08-08 00:18:51 -0600
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2015-08-08 00:18:51 -0600
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2015-08-08 00:18:51 -0600
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2015-08-08 00:18:51 -0600
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2015-08-08 00:18:51 -0600
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2015-08-08 00:18:51 -0600
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2015-08-08 00:18:51 -0600
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2015-08-08 00:18:51 -0600
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2015-08-08 00:18:51 -0600
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2015-08-08 00:18:51 -0600
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2015-08-08 00:18:51 -0600
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2015-08-08 00:18:51 -0600
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-08-08 00:18:51 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-08 00:18:51 -0600
+
+
+Started GET "/assets/apps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:18:51 -0600
+
+
+Started GET "/assets/classrooms.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:18:51 -0600
+
+
+Started GET "/assets/myapplication.self-ebdb3123b352a7824cfe26c555a7bffb746bcc9392a7a28ee188dfe3a76979b5.js?body=1" for ::1 at 2015-08-08 00:18:51 -0600
+
+
+Started GET "/assets/pictures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:18:51 -0600
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:18:51 -0600
+
+
+Started GET "/assets/upload.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:18:51 -0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:18:51 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-08-08 00:18:51 -0600
+
+
+Started GET "/" for ::1 at 2015-08-08 00:19:02 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "classrooms"
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT "classrooms".* FROM "classrooms"[0m
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 1]]
+  Rendered classrooms/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 265ms (Views: 263.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/apps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:19:02 -0600
+
+
+Started GET "/assets/scaffolds.self-862f15e381409402b7d47f349e8b99a0f7d2e27b7cc21d55c6177cc1e0d80834.css?body=1" for ::1 at 2015-08-08 00:19:02 -0600
+
+
+Started GET "/assets/classrooms.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:19:03 -0600
+
+
+Started GET "/assets/myapplication.self-aeb0c0195f612a09e93feeec2939b6a9a798a9233446b5f1af2f3810b5b04e7a.css?body=1" for ::1 at 2015-08-08 00:19:03 -0600
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:19:03 -0600
+
+
+Started GET "/assets/pictures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:19:03 -0600
+
+
+Started GET "/assets/upload.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:19:03 -0600
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:19:03 -0600
+
+
+Started GET "/assets/application.self-2f726a7004baf2546c582b3dabb1bb561a97027ed24de72dad49de20d81a0c32.css?body=1" for ::1 at 2015-08-08 00:19:03 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-08 00:19:03 -0600
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-08 00:19:03 -0600
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2015-08-08 00:19:03 -0600
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2015-08-08 00:19:03 -0600
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2015-08-08 00:19:03 -0600
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2015-08-08 00:19:03 -0600
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2015-08-08 00:19:03 -0600
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2015-08-08 00:19:03 -0600
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2015-08-08 00:19:03 -0600
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2015-08-08 00:19:03 -0600
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2015-08-08 00:19:03 -0600
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2015-08-08 00:19:03 -0600
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2015-08-08 00:19:03 -0600
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2015-08-08 00:19:03 -0600
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-08-08 00:19:03 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-08 00:19:03 -0600
+
+
+Started GET "/assets/apps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:19:03 -0600
+
+
+Started GET "/assets/classrooms.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:19:03 -0600
+
+
+Started GET "/assets/myapplication.self-921503bdaad2a230b1ed9539e39be74cc7667009ba1da1a5723df06706ddb15e.js?body=1" for ::1 at 2015-08-08 00:19:03 -0600
+
+
+Started GET "/assets/pictures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:19:03 -0600
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:19:03 -0600
+
+
+Started GET "/assets/upload.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:19:03 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-08-08 00:19:03 -0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:19:03 -0600
+
+
+Started GET "/" for ::1 at 2015-08-08 00:19:32 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "classrooms"[0m
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT "classrooms".* FROM "classrooms"
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 1]]
+  Rendered classrooms/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 236ms (Views: 234.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/apps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:19:32 -0600
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:19:32 -0600
+
+
+Started GET "/assets/classrooms.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:19:32 -0600
+
+
+Started GET "/assets/scaffolds.self-862f15e381409402b7d47f349e8b99a0f7d2e27b7cc21d55c6177cc1e0d80834.css?body=1" for ::1 at 2015-08-08 00:19:32 -0600
+
+
+Started GET "/assets/myapplication.self-aeb0c0195f612a09e93feeec2939b6a9a798a9233446b5f1af2f3810b5b04e7a.css?body=1" for ::1 at 2015-08-08 00:19:32 -0600
+
+
+Started GET "/assets/pictures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:19:32 -0600
+
+
+Started GET "/assets/upload.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:19:32 -0600
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:19:32 -0600
+
+
+Started GET "/assets/application.self-2f726a7004baf2546c582b3dabb1bb561a97027ed24de72dad49de20d81a0c32.css?body=1" for ::1 at 2015-08-08 00:19:32 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-08 00:19:32 -0600
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-08 00:19:32 -0600
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2015-08-08 00:19:32 -0600
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2015-08-08 00:19:32 -0600
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2015-08-08 00:19:32 -0600
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2015-08-08 00:19:32 -0600
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2015-08-08 00:19:32 -0600
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2015-08-08 00:19:32 -0600
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2015-08-08 00:19:32 -0600
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2015-08-08 00:19:32 -0600
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2015-08-08 00:19:32 -0600
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2015-08-08 00:19:32 -0600
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2015-08-08 00:19:32 -0600
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2015-08-08 00:19:32 -0600
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-08-08 00:19:32 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-08 00:19:32 -0600
+
+
+Started GET "/assets/apps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:19:32 -0600
+
+
+Started GET "/assets/classrooms.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:19:32 -0600
+
+
+Started GET "/assets/myapplication.self-4899c1bafad188ef4ee5daa43f6480163ff4761299cb068dd9064a1a24b17dc6.js?body=1" for ::1 at 2015-08-08 00:19:32 -0600
+
+
+Started GET "/assets/pictures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:19:32 -0600
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:19:32 -0600
+
+
+Started GET "/assets/upload.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:19:32 -0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:19:32 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-08-08 00:19:32 -0600
+
+
+Started GET "/" for ::1 at 2015-08-08 00:20:08 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "classrooms"
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT "classrooms".* FROM "classrooms"[0m
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 1]]
+  Rendered classrooms/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 205ms (Views: 204.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/apps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:20:08 -0600
+
+
+Started GET "/assets/classrooms.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:20:08 -0600
+
+
+Started GET "/assets/upload.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:20:08 -0600
+
+
+Started GET "/assets/myapplication.self-aeb0c0195f612a09e93feeec2939b6a9a798a9233446b5f1af2f3810b5b04e7a.css?body=1" for ::1 at 2015-08-08 00:20:08 -0600
+
+
+Started GET "/assets/scaffolds.self-862f15e381409402b7d47f349e8b99a0f7d2e27b7cc21d55c6177cc1e0d80834.css?body=1" for ::1 at 2015-08-08 00:20:08 -0600
+
+
+Started GET "/assets/pictures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:20:08 -0600
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:20:08 -0600
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:20:08 -0600
+
+
+Started GET "/assets/application.self-2f726a7004baf2546c582b3dabb1bb561a97027ed24de72dad49de20d81a0c32.css?body=1" for ::1 at 2015-08-08 00:20:08 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-08 00:20:08 -0600
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-08 00:20:08 -0600
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2015-08-08 00:20:08 -0600
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2015-08-08 00:20:08 -0600
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2015-08-08 00:20:08 -0600
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2015-08-08 00:20:08 -0600
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2015-08-08 00:20:08 -0600
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2015-08-08 00:20:08 -0600
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2015-08-08 00:20:08 -0600
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2015-08-08 00:20:08 -0600
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2015-08-08 00:20:08 -0600
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2015-08-08 00:20:08 -0600
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2015-08-08 00:20:08 -0600
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2015-08-08 00:20:08 -0600
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-08-08 00:20:08 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-08 00:20:08 -0600
+
+
+Started GET "/assets/apps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:20:08 -0600
+
+
+Started GET "/assets/classrooms.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:20:08 -0600
+
+
+Started GET "/assets/myapplication.self-6be646d3a9989b31dc5edf43a7f6266b154297f00ba18b535a805dfe252f8226.js?body=1" for ::1 at 2015-08-08 00:20:08 -0600
+
+
+Started GET "/assets/pictures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:20:08 -0600
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:20:08 -0600
+
+
+Started GET "/assets/upload.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:20:08 -0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:20:08 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-08-08 00:20:08 -0600
+
+
+Started GET "/" for ::1 at 2015-08-08 00:21:18 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "classrooms"[0m
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT "classrooms".* FROM "classrooms"
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 1]]
+  Rendered classrooms/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 2008ms (Views: 2007.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/apps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:21:20 -0600
+
+
+Started GET "/assets/classrooms.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:21:20 -0600
+
+
+Started GET "/assets/myapplication.self-912248c97f900042a715267afba4d7d4da0bbac10a785b7aac9cac1522d7ebe8.css?body=1" for ::1 at 2015-08-08 00:21:20 -0600
+
+
+Started GET "/assets/upload.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:21:20 -0600
+
+
+Started GET "/assets/scaffolds.self-862f15e381409402b7d47f349e8b99a0f7d2e27b7cc21d55c6177cc1e0d80834.css?body=1" for ::1 at 2015-08-08 00:21:20 -0600
+
+
+Started GET "/assets/pictures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:21:20 -0600
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:21:20 -0600
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-08 00:21:20 -0600
+
+
+Started GET "/assets/application.self-2f726a7004baf2546c582b3dabb1bb561a97027ed24de72dad49de20d81a0c32.css?body=1" for ::1 at 2015-08-08 00:21:21 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-08 00:21:21 -0600
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-08 00:21:21 -0600
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2015-08-08 00:21:21 -0600
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2015-08-08 00:21:21 -0600
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2015-08-08 00:21:21 -0600
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2015-08-08 00:21:21 -0600
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2015-08-08 00:21:21 -0600
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2015-08-08 00:21:21 -0600
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2015-08-08 00:21:21 -0600
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2015-08-08 00:21:21 -0600
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2015-08-08 00:21:21 -0600
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2015-08-08 00:21:21 -0600
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2015-08-08 00:21:21 -0600
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2015-08-08 00:21:21 -0600
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-08-08 00:21:21 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-08 00:21:21 -0600
+
+
+Started GET "/assets/apps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:21:21 -0600
+
+
+Started GET "/assets/classrooms.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:21:21 -0600
+
+
+Started GET "/assets/myapplication.self-3ced5eaef44441d5431e86bab43190bc3de7bb90498ed4f9a04063e91b458113.js?body=1" for ::1 at 2015-08-08 00:21:21 -0600
+
+
+Started GET "/assets/pictures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:21:21 -0600
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:21:21 -0600
+
+
+Started GET "/assets/upload.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:21:21 -0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-08 00:21:21 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-08-08 00:21:21 -0600
