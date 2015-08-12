@@ -38,8 +38,14 @@ div .CDB_NAME {
 	font-size: 30px;
 }
 
+div.CDB_NAME > a {
+	color: white;
+	font-size: 30px;
+}
+
 div .wrapper-content {
 	z-index: 3;
+	top: 40%
 }
 
 div .CDB_LOGIN {
@@ -62,4 +68,16 @@ div .CDB_LOGIN {
 	left: 10%;
 	top: 10%;
 	margin-left: -400px;
+}
+
+.CDB_ADMIN {
+	font-size: 15px;
+}
+
+.CDB_SRCH_ICON {
+	padding-top: 100px;
+}
+
+.CDB_CSR_ZOOM {
+	cursor: -webkit-zoom-in;
 }

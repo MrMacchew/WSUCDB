@@ -21,7 +21,13 @@
 									<tr>
 										<% for picture in @classroom.pictures %>
 											<td>
-															<a data-toggle="modal" data-target="#myModal"><%= image_tag picture.image_url(:thumb).to_s %></a>
+															<a data-toggle="modal" data-target="#myModal">
+																	<% if picture.nil? %>
+																			No Image
+																	<% else %>
+																		<%= image_tag picture.image_url(:thumb).to_s  %>
+																	<% end %>
+															</a>
 											</td>
 										<% end %>
 									</tr>
@@ -39,7 +45,11 @@
 																<h4 style='text-align: center'> <%= @classroom.name %> </h4>	
 												</div>
 												<div class="modal-body">	
-																<%= image_tag picture.image_url(:large).to_s %>
+																	<% if picture.nil? %>
+																			No Image
+																	<% else %>
+																		<%= image_tag picture.image_url(:large).to_s %>
+																	<% end %>
 												</div>
 								</div>
 				</div>
