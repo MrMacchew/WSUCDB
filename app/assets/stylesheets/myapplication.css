@@ -8,25 +8,58 @@
 		color: white;
 }
 
-div.wrapper {
+div .wrapper {
 	position:inherit;
 }
 
-.CDB_TH_NAME {
+div .CDB_TH_NAME {
 	position: absolute;
-bottom: 30%;
-margin-left: auto;
-margin-right: auto;
-display: none;
-background-color: black;
-color: white;
-font-size: 30px;
-z-index: 2;
-opacity: .8;
-height: 38px;
+	padding: 15px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	display: none;
+	background-color: black;
+	color: white;
+	font-size: 30px;
+	z-index: 2;
+	opacity: .7;
 }
 
-div.wrapper-content {
+div .CDB_NAME {
+	position: absolute;
+	padding: 15px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	background-color: purple;
+	color: white;
+	font-size: 30px;
+}
+
+div .wrapper-content {
 	z-index: 3;
 }
 
+div .CDB_LOGIN {
+	text-align: center;
+	background-color: white;
+}
+
+.CDB_INPUT {
+	font-size: 20px;
+	size: 20;
+}
+
+.CDB_NEW {
+	font-size: 20px;
+	text-align: center;
+}
+
+#myModal {
+	position: absolute;
+	left: 10%;
+	top: 10%;
+	margin-left: -400px;
+}
