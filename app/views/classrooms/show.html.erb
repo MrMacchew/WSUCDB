@@ -16,11 +16,8 @@
 									<strong>Occupancy:</strong>
 									<%= @classroom.occupancy %>
 								</p>
-
-								<table>
-									<tr>
+									<div class="CDB_CLASS_SHOW">
 										<% for picture in @classroom.pictures %>
-											<td>
 															<a data-toggle="modal" data-target="#myModal">
 																	<% if picture.nil? %>
 																			No Image
@@ -28,10 +25,8 @@
 																		<%= image_tag picture.image_url(:thumb).to_s  %>
 																	<% end %>
 															</a>
-											</td>
 										<% end %>
-									</tr>
-								</table>
+									</div>
 							 </div>
 							 <div class='col-md-4'></div>
 			 </div>
