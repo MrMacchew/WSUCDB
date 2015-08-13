@@ -1,21 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<nav class="navbar navbar-default">
-	<div class="container-fluid">
-		<ul class="nav navbar-nav">
-			<li><a href='#'>Filters <span class='glyphicon glyphicon-filter'></span></a></li>
-		</ul>
-		<ul class="nav navbar-nav navbar-right">
-			<li>
-				<% if current_user %>
-								<a>	<%= current_user.email %> </a></li><li> <%= link_to "Log out", logout_path, method: "delete" %></li>
-				<% else %>
-						<%= link_to "Login <span class='glyphicon glyphicon-user'></span>".html_safe, 'login' %></li>
-				<% end %>
-			</li>
-		</ul>
-	</div>
-</nav>
 <div class="container">
 				<% if current_user %>
 								<%= link_to new_classroom_path do %>

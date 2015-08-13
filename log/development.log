@@ -18713,6 +18713,7 @@ Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde45
 Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for ::1 at 2015-08-12 00:58:57 -0600
 
 
+<<<<<<< Updated upstream
 Started GET "/" for 127.0.0.1 at 2015-08-12 11:47:15 -0600
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Processing by ClassroomsController#index as HTML
@@ -26106,3 +26107,362 @@ Processing by ClassroomsController#index as HTML
   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
   Rendered classrooms/index.html.erb within layouts/application (7.0ms)
 Completed 200 OK in 194ms (Views: 193.3ms | ActiveRecord: 0.6ms)
+=======
+Started GET "/pictures/new?classroom_id=6" for ::1 at 2015-08-12 01:01:29 -0600
+Processing by PicturesController#new as HTML
+  Parameters: {"classroom_id"=>"6"}
+  Rendered pictures/_form.html.erb (1.4ms)
+  Rendered pictures/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 147ms (Views: 146.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pictures/new?classroom_id=6" for ::1 at 2015-08-12 01:01:29 -0600
+Processing by PicturesController#new as HTML
+  Parameters: {"classroom_id"=>"6"}
+  Rendered pictures/_form.html.erb (1.6ms)
+  Rendered pictures/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 124ms (Views: 124.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pictures" for ::1 at 2015-08-12 01:01:44 -0600
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0Y85rGXnXqiRTfiN7tB3thTpBT84WKgVVl9Tc7P4bGc/CxiLfgYVohthBSy6ICynpdEeey4HfYey0TGmhvumYQ==", "picture"=>{"classroom_id"=>"6", "name"=>"LL125_2", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fa6216f1b10 @tempfile=#<Tempfile:/var/folders/78/jryvbp695vx4yd7jhm0zf3gr0000gn/T/RackMultipart20150812-2370-rbafo6.jpeg>, @original_filename="LL125_2.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"LL125_2.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Picture"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPicture Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "pictures" WHERE "pictures"."name" = 'LL125_2' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "pictures" ("name", "image", "classroom_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "LL125_2"], ["image", "LL125_2.jpeg"], ["classroom_id", 6], ["created_at", "2015-08-12 07:01:45.697305"], ["updated_at", "2015-08-12 07:01:45.697305"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 6]]
+Redirected to http://localhost:3000/classrooms/6
+Completed 302 Found in 731ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/classrooms/6" for ::1 at 2015-08-12 01:01:45 -0600
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", "6"]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?[0m  [["classroom_id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered classrooms/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 141ms (Views: 139.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/classrooms" for ::1 at 2015-08-12 01:02:35 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "classrooms"
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT "classrooms".* FROM "classrooms"[0m
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 127ms (Views: 126.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/classrooms/6/edit" for ::1 at 2015-08-12 01:02:47 -0600
+Processing by ClassroomsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered classrooms/_form.html.erb (1.5ms)
+  Rendered classrooms/edit.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 129ms (Views: 128.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/classrooms" for ::1 at 2015-08-12 01:02:49 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "classrooms"
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT "classrooms".* FROM "classrooms"[0m
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 127ms (Views: 125.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/classrooms/6" for ::1 at 2015-08-12 01:02:50 -0600
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", "6"]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?[0m  [["classroom_id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered classrooms/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 125ms (Views: 123.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/classrooms" for ::1 at 2015-08-12 01:03:31 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "classrooms"
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT "classrooms".* FROM "classrooms"[0m
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 131ms (Views: 130.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/classrooms/6" for ::1 at 2015-08-12 01:03:35 -0600
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", "6"]]
+  [1m[36mPicture Load (0.2ms)[0m  [1mSELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?[0m  [["classroom_id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered classrooms/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 126ms (Views: 124.2ms | ActiveRecord: 0.4ms)
+>>>>>>> Stashed changes
+
+
+Started GET "/" for ::1 at 2015-08-13 01:10:05 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ClassroomsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "classrooms"
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT "classrooms".* FROM "classrooms"  ORDER BY name[0m
+  [1m[35mPicture Load (0.3ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (134.9ms)
+Completed 200 OK in 4776ms (Views: 4753.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/myapplication.self-55732a989a0bf70bbabf2efd6d2426ee95ccac477cfa428cc5e1e56e22e59eb4.css?body=1" for ::1 at 2015-08-13 01:10:11 -0600
+
+
+Started GET "/assets/myapplication.self-58e7f573d4f9b64862d4e18614f2460473c8c550ed8795cb82cc33c1e877f42f.js?body=1" for ::1 at 2015-08-13 01:10:11 -0600
+
+
+Started GET "/" for ::1 at 2015-08-13 01:10:24 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "classrooms"
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT "classrooms".* FROM "classrooms"  ORDER BY name[0m
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 107ms (Views: 105.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/apps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-13 01:10:24 -0600
+
+
+Started GET "/assets/classrooms.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-13 01:10:24 -0600
+
+
+Started GET "/assets/pictures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-13 01:10:24 -0600
+
+
+Started GET "/assets/upload.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-13 01:10:24 -0600
+
+
+Started GET "/assets/myapplication.self-55732a989a0bf70bbabf2efd6d2426ee95ccac477cfa428cc5e1e56e22e59eb4.css?body=1" for ::1 at 2015-08-13 01:10:24 -0600
+
+
+Started GET "/assets/scaffolds.self-862f15e381409402b7d47f349e8b99a0f7d2e27b7cc21d55c6177cc1e0d80834.css?body=1" for ::1 at 2015-08-13 01:10:24 -0600
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-13 01:10:24 -0600
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-13 01:10:24 -0600
+
+
+Started GET "/assets/application.self-e51b7b03bb82d31366ca803b56f927fde79c498a9be30c0549ebd24a4fa69549.css?body=1" for ::1 at 2015-08-13 01:10:24 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-13 01:10:24 -0600
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for ::1 at 2015-08-13 01:10:24 -0600
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-13 01:10:24 -0600
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2015-08-13 01:10:24 -0600
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2015-08-13 01:10:24 -0600
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2015-08-13 01:10:24 -0600
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2015-08-13 01:10:24 -0600
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2015-08-13 01:10:24 -0600
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2015-08-13 01:10:24 -0600
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2015-08-13 01:10:24 -0600
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2015-08-13 01:10:24 -0600
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2015-08-13 01:10:24 -0600
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2015-08-13 01:10:24 -0600
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2015-08-13 01:10:24 -0600
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2015-08-13 01:10:24 -0600
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-08-13 01:10:24 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-13 01:10:24 -0600
+
+
+Started GET "/assets/apps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-13 01:10:24 -0600
+
+
+Started GET "/assets/classrooms.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-13 01:10:24 -0600
+
+
+Started GET "/assets/myapplication.self-58e7f573d4f9b64862d4e18614f2460473c8c550ed8795cb82cc33c1e877f42f.js?body=1" for ::1 at 2015-08-13 01:10:24 -0600
+
+
+Started GET "/assets/pictures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-13 01:10:24 -0600
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-13 01:10:24 -0600
+
+
+Started GET "/assets/upload.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-13 01:10:24 -0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-13 01:10:24 -0600
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for ::1 at 2015-08-13 01:10:24 -0600
+
+
+Started GET "/" for ::1 at 2015-08-13 01:13:16 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ClassroomsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "classrooms"
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT "classrooms".* FROM "classrooms"  ORDER BY name[0m
+  [1m[35mPicture Load (0.2ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (52.7ms)
+Completed 200 OK in 614ms (Views: 596.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/apps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-13 01:13:17 -0600
+
+
+Started GET "/assets/classrooms.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-13 01:13:17 -0600
+
+
+Started GET "/assets/myapplication.self-55732a989a0bf70bbabf2efd6d2426ee95ccac477cfa428cc5e1e56e22e59eb4.css?body=1" for ::1 at 2015-08-13 01:13:17 -0600
+
+
+Started GET "/assets/pictures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-13 01:13:17 -0600
+
+
+Started GET "/assets/upload.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-13 01:13:17 -0600
+
+
+Started GET "/assets/scaffolds.self-862f15e381409402b7d47f349e8b99a0f7d2e27b7cc21d55c6177cc1e0d80834.css?body=1" for ::1 at 2015-08-13 01:13:17 -0600
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-13 01:13:17 -0600
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-13 01:13:17 -0600
+
+
+Started GET "/assets/application.self-e51b7b03bb82d31366ca803b56f927fde79c498a9be30c0549ebd24a4fa69549.css?body=1" for ::1 at 2015-08-13 01:13:17 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-13 01:13:17 -0600
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for ::1 at 2015-08-13 01:13:17 -0600
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-13 01:13:17 -0600
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2015-08-13 01:13:17 -0600
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2015-08-13 01:13:17 -0600
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2015-08-13 01:13:17 -0600
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2015-08-13 01:13:17 -0600
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2015-08-13 01:13:17 -0600
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2015-08-13 01:13:17 -0600
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2015-08-13 01:13:17 -0600
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2015-08-13 01:13:17 -0600
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2015-08-13 01:13:17 -0600
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2015-08-13 01:13:17 -0600
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2015-08-13 01:13:17 -0600
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2015-08-13 01:13:17 -0600
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-08-13 01:13:17 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-13 01:13:17 -0600
+
+
+Started GET "/assets/apps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-13 01:13:17 -0600
+
+
+Started GET "/assets/classrooms.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-13 01:13:17 -0600
+
+
+Started GET "/assets/myapplication.self-58e7f573d4f9b64862d4e18614f2460473c8c550ed8795cb82cc33c1e877f42f.js?body=1" for ::1 at 2015-08-13 01:13:17 -0600
+
+
+Started GET "/assets/pictures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-13 01:13:17 -0600
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-13 01:13:17 -0600
+
+
+Started GET "/assets/upload.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-13 01:13:17 -0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-13 01:13:17 -0600
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for ::1 at 2015-08-13 01:13:17 -0600
+
+
+Started GET "/classrooms/6" for ::1 at 2015-08-13 01:13:20 -0600
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mClassroom Load (0.2ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", "6"]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  [["classroom_id", 6]]
+  Rendered classrooms/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 149ms (Views: 127.2ms | ActiveRecord: 0.3ms)

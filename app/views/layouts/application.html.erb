@@ -11,6 +11,23 @@
 WSU Classroom Database
 </div>
 
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<ul class="nav navbar-nav">
+			<li><a href='#'>Filters <span class='glyphicon glyphicon-filter'></span></a></li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li>
+				<% if current_user %>
+								<a>	<%= current_user.email %> </a></li><li> <%= link_to "Log out", logout_path, method: "delete" %></li>
+				<% else %>
+						<%= link_to "Login <span class='glyphicon glyphicon-user'></span>".html_safe, 'login' %></li>
+				<% end %>
+			</li>
+		</ul>
+	</div>
+</nav>
+
 <%= yield %>
 
 </body>
