@@ -25,6 +25,10 @@ class PicturesController < ApplicationController
   # POST /pictures.json
   def create
     @picture = Picture.new(picture_params)
+		@classroom = Classroom.find(@picture.classroom_id)
+		@new_id = @classroom.pictures.last.id
+		@new_id += 1
+		@picture.name = @classroom.name + "_"  + @new_id.to_s
 
     respond_to do |format|
       if @picture.save
@@ -54,9 +58,10 @@ class PicturesController < ApplicationController
   # DELETE /pictures/1
   # DELETE /pictures/1.json
   def destroy
-    @picture.destroy
+    @classroom = Classroom.find(@picture.classroom_id)
+		@picture.destroy
     respond_to do |format|
-      format.html { redirect_to pictures_url, notice: 'Picture was successfully destroyed.' }
+      format.html { redirect_to @classroom, notice: 'Picture was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +74,6 @@ class PicturesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def picture_params
-      params.require(:picture).permit(:name, :image, :classroom_id)
+      params.require(:picture).permit(:image, :classroom_id)
     end
 end

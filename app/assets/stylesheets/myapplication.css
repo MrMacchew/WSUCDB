@@ -9,6 +9,10 @@
 		padding: 20px;
 }
 
+.CDB_HEADER > a:visited {
+	color: white;
+}
+
 div .wrapper {
 	position:inherit;
 }
@@ -64,7 +68,7 @@ div .CDB_LOGIN {
 	text-align: center;
 }
 
-#myModal {
+.modal {
 	position: absolute;
 	left: 10%;
 	top: 10%;
@@ -79,6 +83,32 @@ div .CDB_LOGIN {
 	padding-top: 100px;
 }
 
-.CDB_CSR_ZOOM {
+.CDB_CLASS_CELL {
+	padding: 10px;
+}
+
+.CDB_CLASS_CELL > a {
+	cursor: zoom-in;
 	cursor: -webkit-zoom-in;
 }
+
+.CDB_CLASS_TABLE {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.CDB_ADD_BUTTON {
+	padding-left: 100px;
+}
+
+a:hover .CDB_NO_HOVER {
+	color: none;
+	background-color: none;
+}
+
+#AddButton {
+	width: 50px;
+	height: 50px;
+	opacity: .6;
+}
+
