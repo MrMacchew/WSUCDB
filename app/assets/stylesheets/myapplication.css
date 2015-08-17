@@ -112,3 +112,12 @@ a:hover .CDB_NO_HOVER {
 	opacity: .6;
 }
 
+.CDB_BLDG_ROW {
+				background-color: white;
+}
+
+.CDB_BLDG_TH > th {
+	background-color: purple;
+	color: white;
+	font-size: 20px;
+}
