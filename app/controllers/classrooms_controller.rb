@@ -18,6 +18,7 @@ class ClassroomsController < ApplicationController
   # GET /classrooms/new
   def new
     @classroom = Classroom.new
+		@buildings = Building.all
   end
 
   # GET /classrooms/1/edit
@@ -45,7 +46,7 @@ class ClassroomsController < ApplicationController
   def update
     respond_to do |format|
       if @classroom.update(classroom_params)
-        format.html { redirect_to @classroom, notice: 'Classroom was successfully updated.' }
+        format.html { redirect_to classrooms_path, notice: 'Classroom was successfully updated.' }
         format.json { render :show, status: :ok, location: @classroom }
       else
         format.html { render :edit }

@@ -26,7 +26,11 @@ class PicturesController < ApplicationController
   def create
     @picture = Picture.new(picture_params)
 		@classroom = Classroom.find(@picture.classroom_id)
-		@new_id = @classroom.pictures.last.id
+		if @classroom.pictures.count == 0
+			@new_id = 1
+		else
+			@new_id = @classroom.pictures.last.id
+		end
 		@new_id += 1
 		@picture.name = @classroom.name + "_"  + @new_id.to_s
 

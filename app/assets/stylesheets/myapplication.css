@@ -112,7 +112,7 @@ a:hover .CDB_NO_HOVER {
 	opacity: .6;
 }
 
-.CDB_BLDG_ROW {
+.CDB_BLDG_ROW > td {
 				background-color: white;
 }
 

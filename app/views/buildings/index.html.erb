@@ -20,14 +20,22 @@
 								<tr class="CDB_BLDG_TH">
 												<th>Name</th>
 												<th>Code</th>
+												<th>Rooms</th>
 								</tr>
 								<% @buildings.each do |building| %>
-												<tr>
-																<td class='CDB_BLDG_ROW'>
+												<tr class='CDB_BLDG_ROW'>
+																<td>
 																				<%= building.name %>
 																</td>
-																<td class='CDB_BLDG_ROW'>
+																<td>
 																				<%= building.code %>
+																</td>
+																<td>
+																				<% building.classrooms.each do |classroom| %>
+																						<p>
+																								<%= classroom.name %>
+																						</p>
+																				<% end %>
 																</td>
 												</tr>
 								<% end %>

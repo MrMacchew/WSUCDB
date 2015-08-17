@@ -18,6 +18,7 @@
 		<ul class="nav navbar-nav navbar-right">
 			<li>
 				<% if current_user %>
+								<li> <%= link_to "Classrooms", classrooms_path %> </li>
 								<li> <%= link_to "Buildings", buildings_path %> </li>
 								<li><a> <%= current_user.email %> </a> </li><li> <%= link_to "Log out", logout_path, method: "delete" %></li>
 				<% else %>

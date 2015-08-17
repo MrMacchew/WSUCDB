@@ -37366,3 +37366,2281 @@ Completed 200 OK in 124ms (Views: 122.3ms | ActiveRecord: 0.3ms)
 
 
 Started GET "/assets/add-button-md-03226d12be44d96caa21e4dfb43b93d0500e2cc50aeff73881cd60399bb31f88.png" for ::1 at 2015-08-17 00:46:43 -0600
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-17 09:41:23 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ClassroomsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "classrooms"
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT "classrooms".* FROM "classrooms"  ORDER BY name[0m
+  [1m[35mPicture Load (0.3ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (206.3ms)
+Completed 200 OK in 6524ms (Views: 6471.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/myapplication.self-de90c8d0914d01180af2818f9296651ea0fe665862f87001635c978edf2b5ea1.css?body=1" for 127.0.0.1 at 2015-08-17 09:41:30 -0600
+
+
+Started GET "/login" for 127.0.0.1 at 2015-08-17 09:41:33 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (69.7ms)
+Completed 200 OK in 274ms (Views: 272.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2015-08-17 09:41:44 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xAhI+9CFpEkoVmsXxs59lvj6wAGHHkiHD8Er8SU35KM3ObO2Dx3vA5FjuV1dAa7kGmBawTDEyzylwOkAmyhQ3A==", "session"=>{"email"=>"Matt@ninja.dev", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "Matt@ninja.dev"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 211ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-17 09:41:44 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "classrooms"
+  [1m[36mClassroom Load (0.2ms)[0m  [1mSELECT "classrooms".* FROM "classrooms"  ORDER BY name[0m
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 172ms (Views: 170.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/classrooms/6" for 127.0.0.1 at 2015-08-17 09:41:59 -0600
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mClassroom Load (0.3ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", "6"]]
+  [1m[35mPicture Load (0.2ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  [["classroom_id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered classrooms/show.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 308ms (Views: 305.5ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2015-08-17 09:42:03 -0600
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"vXq6Yq8KZei3MLlc/R75KxQ+Zj9rzT34EVDj+hhFYUJOS0EvcJIuog4FaxZm0SpZ9qT8/9wXvkO7USELplrVPQ=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-17 09:42:03 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "classrooms"
+  [1m[36mClassroom Load (0.2ms)[0m  [1mSELECT "classrooms".* FROM "classrooms"  ORDER BY name[0m
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 183ms (Views: 181.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/classrooms/7" for 127.0.0.1 at 2015-08-17 09:42:05 -0600
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  [["classroom_id", 7]]
+  Rendered classrooms/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 168ms (Views: 165.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2015-08-17 09:43:13 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "classrooms"[0m
+  [1m[35mClassroom Load (0.2ms)[0m  SELECT "classrooms".* FROM "classrooms"  ORDER BY name
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 184ms (Views: 182.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/classrooms/6" for 127.0.0.1 at 2015-08-17 09:43:21 -0600
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", "6"]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?[0m  [["classroom_id", 6]]
+  Rendered classrooms/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 234ms (Views: 231.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2015-08-17 09:43:34 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "classrooms"
+  [1m[36mClassroom Load (0.2ms)[0m  [1mSELECT "classrooms".* FROM "classrooms"  ORDER BY name[0m
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 224ms (Views: 222.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2015-08-17 09:53:04 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "classrooms"
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT "classrooms".* FROM "classrooms"  ORDER BY name[0m
+  [1m[35mPicture Load (0.2ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (29.5ms)
+Completed 200 OK in 3317ms (Views: 3308.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 172ms (Views: 171.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/apps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/buildings.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/classrooms.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/myapplication.self-7b51c1c6729b3390000971b4df95f72eb32eb0f6ac1f0e873b8d2b0c3a049acb.css?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/pictures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/scaffolds.self-846b4d8cb10999c9aaa4235e577d989143196892371d884f459a562d1087d7fa.css?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/upload.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/application.self-0b6efe868caf8d9da5988008c2d498b113d3c5a9d7caf8d38c0d6c6234e18d13.css?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/apps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/classrooms.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/buildings.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/myapplication.self-58e7f573d4f9b64862d4e18614f2460473c8c550ed8795cb82cc33c1e877f42f.js?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/pictures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/upload.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for 127.0.0.1 at 2015-08-17 09:53:08 -0600
+
+
+Started GET "/login" for 127.0.0.1 at 2015-08-17 09:53:10 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 259ms (Views: 258.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2015-08-17 09:53:15 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t1lZQayPu9wg3TRcojleDzo/8ntKyqqSwUQlrLLW5qhEaKIMcxfwlpno5hY59o192KVou/0QKSlrReddDMlS1w==", "session"=>{"email"=>"Matt@ninja.dev", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "Matt@ninja.dev"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 86ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-17 09:53:15 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "classrooms"
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT "classrooms".* FROM "classrooms"  ORDER BY name[0m
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 242ms (Views: 240.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/buildings" for 127.0.0.1 at 2015-08-17 09:53:19 -0600
+Processing by BuildingsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mBuilding Load (0.2ms)[0m  [1mSELECT "buildings".* FROM "buildings"  ORDER BY name[0m
+  [1m[35mClassroom Load (0.3ms)[0m  SELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."building_id" = ?  [["building_id", "1"]]
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."building_id" = ?[0m  [["building_id", "2"]]
+  Rendered buildings/index.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 206ms (Views: 200.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-17 09:53:29 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "classrooms"[0m
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT "classrooms".* FROM "classrooms"  ORDER BY name
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 146ms (Views: 144.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/classrooms/6/edit" for 127.0.0.1 at 2015-08-17 09:53:31 -0600
+Processing by ClassroomsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mClassroom Load (0.2ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered classrooms/_form.html.erb (77.5ms)
+  Rendered classrooms/edit.html.erb within layouts/application (113.4ms)
+Completed 200 OK in 274ms (Views: 272.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2015-08-17 09:53:44 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "classrooms"
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT "classrooms".* FROM "classrooms"  ORDER BY name[0m
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 191ms (Views: 189.4ms | ActiveRecord: 0.6ms)
+  [1m[36mClassroom Load (0.2ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms"  ORDER BY "classrooms"."id" ASC LIMIT 1[0m
+
+
+Started GET "/classrooms/6/edit" for 127.0.0.1 at 2015-08-17 10:31:20 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ClassroomsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mClassroom Load (0.2ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered classrooms/_form.html.erb (17.3ms)
+  Rendered classrooms/edit.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 415ms (Views: 375.9ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/classrooms/6" for 127.0.0.1 at 2015-08-17 10:31:29 -0600
+Processing by ClassroomsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9jKy3yp98bwho8zA3hG2AuyE7jjRcZG9688IC6NTUnUFA0mS9eW69piWHopF3mVwDh50+GarEgZBzsr6HUzmCg==", "classroom"=>{"name"=>"LL125", "building_id"=>"LL", "occupancy"=>"50"}, "commit"=>"Update Classroom", "id"=>"6"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mClassroom Exists (0.2ms)[0m  SELECT  1 AS one FROM "classrooms" WHERE ("classrooms"."name" = 'LL125' AND "classrooms"."id" != 6) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "classrooms" SET "building_id" = ?, "updated_at" = ? WHERE "classrooms"."id" = ?[0m  [["building_id", "LL"], ["updated_at", "2015-08-17 16:31:29.746767"], ["id", 6]]
+  [1m[35m (1.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/classrooms/6
+Completed 302 Found in 52ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/classrooms/6" for 127.0.0.1 at 2015-08-17 10:31:29 -0600
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", "6"]]
+  [1m[36mPicture Load (0.2ms)[0m  [1mSELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?[0m  [["classroom_id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered classrooms/show.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 173ms (Views: 157.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/classrooms/6/edit" for 127.0.0.1 at 2015-08-17 10:31:32 -0600
+Processing by ClassroomsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered classrooms/_form.html.erb (2.0ms)
+  Rendered classrooms/edit.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 228ms (Views: 226.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2015-08-17 10:31:34 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "classrooms"
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT "classrooms".* FROM "classrooms"  ORDER BY name[0m
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 174ms (Views: 172.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/classrooms/7/edit" for 127.0.0.1 at 2015-08-17 10:31:36 -0600
+Processing by ClassroomsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered classrooms/_form.html.erb (2.5ms)
+  Rendered classrooms/edit.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 157ms (Views: 154.7ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/classrooms/7" for 127.0.0.1 at 2015-08-17 10:31:40 -0600
+Processing by ClassroomsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3jUBXrQHOLA7siK9gKRQ6l4yjRsSXwq2RnNWxTxi3NUtBPoTa59z+oKH8Pcba4OYvKgX26WFiQ3scpQ0gn1oqg==", "classroom"=>{"name"=>"BC117", "building_id"=>"BC", "occupancy"=>"24"}, "commit"=>"Update Classroom", "id"=>"7"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mClassroom Exists (0.1ms)[0m  SELECT  1 AS one FROM "classrooms" WHERE ("classrooms"."name" = 'BC117' AND "classrooms"."id" != 7) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "classrooms" SET "building_id" = ?, "updated_at" = ? WHERE "classrooms"."id" = ?[0m  [["building_id", "BC"], ["updated_at", "2015-08-17 16:31:40.836014"], ["id", 7]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/classrooms/7
+Completed 302 Found in 8ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/classrooms/7" for 127.0.0.1 at 2015-08-17 10:31:40 -0600
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mClassroom Load (0.2ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?[0m  [["classroom_id", 7]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered classrooms/show.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 166ms (Views: 164.2ms | ActiveRecord: 0.3ms)
+  [1m[36mBuilding Load (0.3ms)[0m  [1mSELECT  "buildings".* FROM "buildings"  ORDER BY "buildings"."id" ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_classrooms_on_classroom_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_classrooms_on_classroom_id' AND type='index'
+[0m
+  [1m[36mBuilding Load (0.1ms)[0m  [1mSELECT  "buildings".* FROM "buildings"  ORDER BY "buildings"."id" ASC LIMIT 1[0m
+  [1m[35mClassroom Load (0.3ms)[0m  SELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."building_id" = ?  [["building_id", "1"]]
+  [1m[36mBuilding Load (0.2ms)[0m  [1mSELECT  "buildings".* FROM "buildings"  ORDER BY "buildings"."id" ASC LIMIT 1[0m
+  [1m[35mClassroom Load (0.2ms)[0m  SELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."building_id" = ?  [["building_id", "1"]]
+
+
+Started GET "/buildings" for 127.0.0.1 at 2015-08-17 11:48:16 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BuildingsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mBuilding Load (0.1ms)[0m  [1mSELECT "buildings".* FROM "buildings"  ORDER BY name[0m
+  [1m[35mClassroom Load (0.2ms)[0m  SELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."building_id" = ?  [["building_id", "1"]]
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."building_id" = ?[0m  [["building_id", "2"]]
+  Rendered buildings/index.html.erb within layouts/application (35.8ms)
+Completed 200 OK in 407ms (Views: 393.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-17 11:48:25 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "classrooms"[0m
+  [1m[35mClassroom Load (0.2ms)[0m  SELECT "classrooms".* FROM "classrooms"  ORDER BY name
+  [1m[36mPicture Load (0.2ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mPicture Load (0.3ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (79.7ms)
+Completed 200 OK in 244ms (Views: 240.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/classrooms/6" for 127.0.0.1 at 2015-08-17 11:48:27 -0600
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mClassroom Load (0.2ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", "6"]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?[0m  [["classroom_id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered classrooms/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 204ms (Views: 201.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/buildings" for 127.0.0.1 at 2015-08-17 11:48:38 -0600
+Processing by BuildingsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mBuilding Load (0.2ms)[0m  SELECT "buildings".* FROM "buildings"  ORDER BY name
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."building_id" = ?[0m  [["building_id", "1"]]
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."building_id" = ?  [["building_id", "2"]]
+  Rendered buildings/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 187ms (Views: 185.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-17 11:48:41 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "classrooms"
+  [1m[36mClassroom Load (0.2ms)[0m  [1mSELECT "classrooms".* FROM "classrooms"  ORDER BY name[0m
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 197ms (Views: 195.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/classrooms/6/edit" for 127.0.0.1 at 2015-08-17 11:48:42 -0600
+Processing by ClassroomsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered classrooms/_form.html.erb (1.6ms)
+  Rendered classrooms/edit.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms)
+
+SyntaxError (/home/mattcain/WSUCDB/app/views/classrooms/_form.html.erb:29: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/home/mattcain/WSUCDB/app/views/classrooms/_form.html.erb:31: syntax error, unexpected keyword_ensure, expecting ')'
+/home/mattcain/WSUCDB/app/views/classrooms/_form.html.erb:33: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/classrooms/_form.html.erb:29: syntax error, unexpected keyword_end, expecting ')'
+  app/views/classrooms/_form.html.erb:31: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/classrooms/_form.html.erb:33: syntax error, unexpected keyword_end, expecting ')'
+  app/views/classrooms/edit.html.erb:3:in `_app_views_classrooms_edit_html_erb__2872494962955645511_41861820'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (15.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (112.5ms)
+
+
+Started GET "/classrooms/6/edit" for 127.0.0.1 at 2015-08-17 11:48:43 -0600
+Processing by ClassroomsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered classrooms/_form.html.erb (1.4ms)
+  Rendered classrooms/edit.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+
+SyntaxError (/home/mattcain/WSUCDB/app/views/classrooms/_form.html.erb:29: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/home/mattcain/WSUCDB/app/views/classrooms/_form.html.erb:31: syntax error, unexpected keyword_ensure, expecting ')'
+/home/mattcain/WSUCDB/app/views/classrooms/_form.html.erb:33: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/classrooms/_form.html.erb:29: syntax error, unexpected keyword_end, expecting ')'
+  app/views/classrooms/_form.html.erb:31: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/classrooms/_form.html.erb:33: syntax error, unexpected keyword_end, expecting ')'
+  app/views/classrooms/edit.html.erb:3:in `_app_views_classrooms_edit_html_erb__2872494962955645511_70238227353080'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (27.9ms)
+
+
+Started GET "/classrooms/6/edit" for 127.0.0.1 at 2015-08-17 11:49:32 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ClassroomsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mClassroom Load (0.3ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered classrooms/_form.html.erb (1.8ms)
+  Rendered classrooms/edit.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 1.1ms)
+
+SyntaxError (/home/mattcain/WSUCDB/app/views/classrooms/_form.html.erb:29: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/home/mattcain/WSUCDB/app/views/classrooms/_form.html.erb:31: syntax error, unexpected keyword_ensure, expecting ')'
+/home/mattcain/WSUCDB/app/views/classrooms/_form.html.erb:33: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/classrooms/_form.html.erb:29: syntax error, unexpected keyword_end, expecting ')'
+  app/views/classrooms/_form.html.erb:31: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/classrooms/_form.html.erb:33: syntax error, unexpected keyword_end, expecting ')'
+  app/views/classrooms/edit.html.erb:3:in `_app_views_classrooms_edit_html_erb__4505599250573674651_45497240'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.1ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (24.8ms)
+
+
+Started GET "/classrooms/6/edit" for 127.0.0.1 at 2015-08-17 11:52:34 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ClassroomsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mClassroom Load (0.2ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered classrooms/_form.html.erb (19.6ms)
+  Rendered classrooms/edit.html.erb within layouts/application (24.0ms)
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 1.0ms)
+
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    17:   </div>
+    18:   <div class="field">
+    19:   	<%= f.label :building_id %>
+    20: 		<%= select_tag "Building", options_from_collection_for_select(@buildings, "id", "name") %>
+    21: 	</div>
+    22:   <div class="field">
+    23:     <%= f.label :occupancy %><br>
+  app/views/classrooms/_form.html.erb:20:in `block in _app_views_classrooms__form_html_erb__1263514474985985335_49030980'
+  app/views/classrooms/_form.html.erb:1:in `_app_views_classrooms__form_html_erb__1263514474985985335_49030980'
+  app/views/classrooms/edit.html.erb:3:in `_app_views_classrooms_edit_html_erb___3266999268112546406_49278500'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (38.1ms)
+
+
+Started GET "/classrooms/6/edit" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+Processing by ClassroomsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mClassroom Load (0.2ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mBuilding Load (0.2ms)[0m  SELECT "buildings".* FROM "buildings"
+  Rendered classrooms/_form.html.erb (7.8ms)
+  Rendered classrooms/edit.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 319ms (Views: 316.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/apps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/buildings.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/classrooms.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/scaffolds.self-846b4d8cb10999c9aaa4235e577d989143196892371d884f459a562d1087d7fa.css?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/myapplication.self-7b51c1c6729b3390000971b4df95f72eb32eb0f6ac1f0e873b8d2b0c3a049acb.css?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/upload.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/pictures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/application.self-0b6efe868caf8d9da5988008c2d498b113d3c5a9d7caf8d38c0d6c6234e18d13.css?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/apps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/classrooms.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/buildings.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/myapplication.self-58e7f573d4f9b64862d4e18614f2460473c8c550ed8795cb82cc33c1e877f42f.js?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/pictures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/upload.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for 127.0.0.1 at 2015-08-17 11:53:41 -0600
+
+
+Started PATCH "/classrooms/6" for 127.0.0.1 at 2015-08-17 11:53:59 -0600
+Processing by ClassroomsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VHVZx2m+qUOK+KjJTHYiaQzcluOacQKt4FtkmKeEiZWnRKKKtibiCTPNeoPXufEb7kYMIy2rgRZKWqZpGZs96g==", "classroom"=>{"name"=>"LL125", "occupancy"=>"50"}, "Building"=>"1", "commit"=>"Update Classroom", "id"=>"6"}
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mClassroom Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "classrooms" WHERE ("classrooms"."name" = 'LL125' AND "classrooms"."id" != 6) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/classrooms/6
+Completed 302 Found in 21ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/classrooms/6" for 127.0.0.1 at 2015-08-17 11:53:59 -0600
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", "6"]]
+  [1m[36mPicture Load (0.2ms)[0m  [1mSELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?[0m  [["classroom_id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered classrooms/show.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 208ms (Views: 193.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2015-08-17 11:54:14 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "classrooms"
+  [1m[36mClassroom Load (0.2ms)[0m  [1mSELECT "classrooms".* FROM "classrooms"  ORDER BY name[0m
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 189ms (Views: 188.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/classrooms/7/edit" for 127.0.0.1 at 2015-08-17 11:54:17 -0600
+Processing by ClassroomsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mBuilding Load (0.3ms)[0m  SELECT "buildings".* FROM "buildings"
+  Rendered classrooms/_form.html.erb (4.2ms)
+  Rendered classrooms/edit.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 175ms (Views: 173.1ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/classrooms/7" for 127.0.0.1 at 2015-08-17 11:54:36 -0600
+Processing by ClassroomsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xo/aP0who12dWM/ml5SAgK75ULdLgf8RncBFv+2LnFmtviFyk7noFyRtHawMW1PyTGPKd/xbfKo3wYdOU5QoJg==", "classroom"=>{"name"=>"BC117", "occupancy"=>"24"}, "Building"=>"2", "commit"=>"Update Classroom", "id"=>"7"}
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mClassroom Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "classrooms" WHERE ("classrooms"."name" = 'BC117' AND "classrooms"."id" != 7) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/classrooms/7
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/classrooms/7" for 127.0.0.1 at 2015-08-17 11:54:36 -0600
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?[0m  [["classroom_id", 7]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered classrooms/show.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 189ms (Views: 186.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2015-08-17 11:54:40 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "classrooms"
+  [1m[36mClassroom Load (0.2ms)[0m  [1mSELECT "classrooms".* FROM "classrooms"  ORDER BY name[0m
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 177ms (Views: 176.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/buildings" for 127.0.0.1 at 2015-08-17 11:54:44 -0600
+Processing by BuildingsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mBuilding Load (0.2ms)[0m  [1mSELECT "buildings".* FROM "buildings"  ORDER BY name[0m
+  [1m[35mClassroom Load (0.2ms)[0m  SELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."building_id" = ?  [["building_id", "1"]]
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."building_id" = ?[0m  [["building_id", "2"]]
+  Rendered buildings/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 197ms (Views: 195.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-17 11:54:47 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "classrooms"[0m
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT "classrooms".* FROM "classrooms"  ORDER BY name
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 221ms (Views: 219.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/classrooms/7/edit" for 127.0.0.1 at 2015-08-17 11:55:43 -0600
+Processing by ClassroomsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mBuilding Load (0.2ms)[0m  [1mSELECT "buildings".* FROM "buildings"[0m
+  Rendered classrooms/_form.html.erb (3.3ms)
+  Rendered classrooms/edit.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 186ms (Views: 184.1ms | ActiveRecord: 0.4ms)
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms"  ORDER BY "classrooms"."id" ASC LIMIT 1[0m
+
+
+Started PATCH "/classrooms/7" for 127.0.0.1 at 2015-08-17 11:56:23 -0600
+Processing by ClassroomsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d8e5X5YPUWrMByqA/f2q6CH7IFLiNhGWwBa9ymsYnXWE9kISSZcaIHUy+MpmMnmaw2G6klXski1qF3871QcpCg==", "classroom"=>{"name"=>"BC117", "occupancy"=>"24"}, "Building"=>"1", "commit"=>"Update Classroom", "id"=>"7"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mClassroom Exists (0.2ms)[0m  SELECT  1 AS one FROM "classrooms" WHERE ("classrooms"."name" = 'BC117' AND "classrooms"."id" != 7) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/classrooms/7
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/classrooms/7" for 127.0.0.1 at 2015-08-17 11:56:23 -0600
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  [["classroom_id", 7]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered classrooms/show.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 204ms (Views: 202.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2015-08-17 11:56:30 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "classrooms"[0m
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT "classrooms".* FROM "classrooms"  ORDER BY name
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 202ms (Views: 200.9ms | ActiveRecord: 0.5ms)
+  [1m[35mClassroom Load (0.2ms)[0m  SELECT  "classrooms".* FROM "classrooms"  ORDER BY "classrooms"."id" DESC LIMIT 1
+
+
+Started GET "/classrooms/7/edit" for 127.0.0.1 at 2015-08-17 12:00:36 -0600
+Processing by ClassroomsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mBuilding Load (0.2ms)[0m  [1mSELECT "buildings".* FROM "buildings"[0m
+  Rendered classrooms/_form.html.erb (3.8ms)
+  Rendered classrooms/edit.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 171ms (Views: 168.6ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/classrooms/7" for 127.0.0.1 at 2015-08-17 12:00:39 -0600
+Processing by ClassroomsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LXq6iBNPQzePN1LY7FEVrLMOAjQLTCJa0l4ywgJ+onfeS0HFzNcIfTYCgJJ3nsbeUZSY9LyWoeF4X/AzvGEWCA==", "classroom"=>{"name"=>"BC117", "occupancy"=>"24"}, "Building"=>"2", "commit"=>"Update Classroom", "id"=>"7"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mClassroom Exists (0.1ms)[0m  SELECT  1 AS one FROM "classrooms" WHERE ("classrooms"."name" = 'BC117' AND "classrooms"."id" != 7) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/classrooms/7
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/classrooms/7" for 127.0.0.1 at 2015-08-17 12:00:39 -0600
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  [["classroom_id", 7]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered classrooms/show.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 186ms (Views: 183.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2015-08-17 12:00:45 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "classrooms"[0m
+  [1m[35mClassroom Load (0.2ms)[0m  SELECT "classrooms".* FROM "classrooms"  ORDER BY name
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 173ms (Views: 171.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/classrooms/7/edit" for 127.0.0.1 at 2015-08-17 12:16:27 -0600
+Processing by ClassroomsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mBuilding Load (0.2ms)[0m  [1mSELECT "buildings".* FROM "buildings"[0m
+  Rendered classrooms/_form.html.erb (11.4ms)
+  Rendered classrooms/edit.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 207ms (Views: 186.5ms | ActiveRecord: 1.7ms)
+
+
+Started PATCH "/classrooms/7" for 127.0.0.1 at 2015-08-17 12:16:29 -0600
+Processing by ClassroomsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H6nDXPmJIIRlxtxe1KbsDHuQLgEVZzT6luPfEYf4TfbsmDgRJhFrztzzDhRPaT9+mQq0waK9t0E84h3gOef5iQ==", "classroom"=>{"name"=>"BC117", "occupancy"=>"24"}, "Building"=>"1", "commit"=>"Update Classroom", "id"=>"7"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mClassroom Exists (0.2ms)[0m  SELECT  1 AS one FROM "classrooms" WHERE ("classrooms"."name" = 'BC117' AND "classrooms"."id" != 7) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/classrooms
+Completed 302 Found in 11ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2015-08-17 12:16:29 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "classrooms"[0m
+  [1m[35mClassroom Load (0.2ms)[0m  SELECT "classrooms".* FROM "classrooms"  ORDER BY name
+  [1m[36mPicture Load (0.2ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 239ms (Views: 237.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/classrooms/7/edit" for 127.0.0.1 at 2015-08-17 12:25:43 -0600
+Processing by ClassroomsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mBuilding Load (0.1ms)[0m  [1mSELECT "buildings".* FROM "buildings"[0m
+  Rendered classrooms/_form.html.erb (3.8ms)
+  Rendered classrooms/edit.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 160ms (Views: 157.5ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/classrooms/7" for 127.0.0.1 at 2015-08-17 12:25:46 -0600
+Processing by ClassroomsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"22EM3RpXk76tQytE/fSF26CU/j30Z8gV8cJeZQ0h8cwoUPeQxc/Y9BR2+Q5mO1apQg5k/UO9S65bw5yUsz5Fsw==", "classroom"=>{"name"=>"BC117", "occupancy"=>"24"}, "building_id"=>"1", "commit"=>"Update Classroom", "id"=>"7"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mClassroom Exists (0.1ms)[0m  SELECT  1 AS one FROM "classrooms" WHERE ("classrooms"."name" = 'BC117' AND "classrooms"."id" != 7) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/classrooms
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2015-08-17 12:25:46 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "classrooms"[0m
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT "classrooms".* FROM "classrooms"  ORDER BY name
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 176ms (Views: 174.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/classrooms/6/edit" for 127.0.0.1 at 2015-08-17 12:25:48 -0600
+Processing by ClassroomsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mBuilding Load (0.2ms)[0m  [1mSELECT "buildings".* FROM "buildings"[0m
+  Rendered classrooms/_form.html.erb (2.8ms)
+  Rendered classrooms/edit.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 178ms (Views: 176.2ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/classrooms/6" for 127.0.0.1 at 2015-08-17 12:25:53 -0600
+Processing by ClassroomsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0FWlx/lzksf7GabebrKZjuqx2oVtSHGnbkqTq29KSIojZF6KJuvZjUIsdJT1fUr8CCtARdqS8hzES1Fa0VX89Q==", "classroom"=>{"name"=>"LL125", "occupancy"=>"50"}, "building_id"=>"2", "commit"=>"Update Classroom", "id"=>"6"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mClassroom Exists (0.1ms)[0m  SELECT  1 AS one FROM "classrooms" WHERE ("classrooms"."name" = 'LL125' AND "classrooms"."id" != 6) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/classrooms
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2015-08-17 12:25:53 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "classrooms"[0m
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT "classrooms".* FROM "classrooms"  ORDER BY name
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 167ms (Views: 166.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/classrooms/6" for 127.0.0.1 at 2015-08-17 12:25:56 -0600
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mClassroom Load (0.2ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", "6"]]
+  [1m[36mPicture Load (0.2ms)[0m  [1mSELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?[0m  [["classroom_id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered classrooms/show.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 176ms (Views: 173.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2015-08-17 12:26:00 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "classrooms"
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT "classrooms".* FROM "classrooms"  ORDER BY name[0m
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 172ms (Views: 170.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/classrooms/7" for 127.0.0.1 at 2015-08-17 12:26:01 -0600
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  [["classroom_id", 7]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered classrooms/show.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 173ms (Views: 170.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2015-08-17 12:26:03 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "classrooms"[0m
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT "classrooms".* FROM "classrooms"  ORDER BY name
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 176ms (Views: 175.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/classrooms/7/edit" for 127.0.0.1 at 2015-08-17 12:26:15 -0600
+Processing by ClassroomsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mBuilding Load (0.2ms)[0m  [1mSELECT "buildings".* FROM "buildings"[0m
+  Rendered classrooms/_form.html.erb (3.5ms)
+  Rendered classrooms/edit.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 202ms (Views: 199.9ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/classrooms/7" for 127.0.0.1 at 2015-08-17 12:26:20 -0600
+Processing by ClassroomsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q48sEmzwuqq1fIOEFxaMk0hsWsRAhYwi7dhOe6gViahYvtdfs2jx4AxJUc6M2V/hqvbABPdfD5lH2YyKFgo91w==", "classroom"=>{"name"=>"BC117", "occupancy"=>"24"}, "building_id"=>"1", "commit"=>"Update Classroom", "id"=>"7"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mClassroom Exists (0.1ms)[0m  SELECT  1 AS one FROM "classrooms" WHERE ("classrooms"."name" = 'BC117' AND "classrooms"."id" != 7) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/classrooms
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2015-08-17 12:26:20 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "classrooms"[0m
+  [1m[35mClassroom Load (0.3ms)[0m  SELECT "classrooms".* FROM "classrooms"  ORDER BY name
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 175ms (Views: 173.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/classrooms/7/edit" for 127.0.0.1 at 2015-08-17 12:27:23 -0600
+Processing by ClassroomsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mBuilding Load (0.1ms)[0m  [1mSELECT "buildings".* FROM "buildings"[0m
+  Rendered classrooms/_form.html.erb (17.1ms)
+  Rendered classrooms/edit.html.erb within layouts/application (17.8ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `select_tag' for #<ActionView::Helpers::FormBuilder:0x007f8f2a1a2870>):
+    17:   </div>
+    18:   <div class="field">
+    19:   	<%= f.label :building_id %>
+    20: 		<%= f.select_tag "building_id", options_for_select(Building.all.collect{ |b| [b.name, b.id] }) %>
+    21: 	</div>
+    22:   <div class="field">
+    23:     <%= f.label :occupancy %><br>
+  app/views/classrooms/_form.html.erb:20:in `block in _app_views_classrooms__form_html_erb__1263514474985985335_70126431828300'
+  app/views/classrooms/_form.html.erb:1:in `_app_views_classrooms__form_html_erb__1263514474985985335_70126431828300'
+  app/views/classrooms/edit.html.erb:3:in `_app_views_classrooms_edit_html_erb___3266999268112546406_70126435902960'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (24.6ms)
+
+
+Started GET "/classrooms/7/edit" for 127.0.0.1 at 2015-08-17 12:27:23 -0600
+Processing by ClassroomsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mBuilding Load (0.1ms)[0m  SELECT "buildings".* FROM "buildings"
+  Rendered classrooms/_form.html.erb (15.0ms)
+  Rendered classrooms/edit.html.erb within layouts/application (15.6ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `select_tag' for #<ActionView::Helpers::FormBuilder:0x007f8f2a380598>):
+    17:   </div>
+    18:   <div class="field">
+    19:   	<%= f.label :building_id %>
+    20: 		<%= f.select_tag "building_id", options_for_select(Building.all.collect{ |b| [b.name, b.id] }) %>
+    21: 	</div>
+    22:   <div class="field">
+    23:     <%= f.label :occupancy %><br>
+  app/views/classrooms/_form.html.erb:20:in `block in _app_views_classrooms__form_html_erb__1263514474985985335_70126432799800'
+  app/views/classrooms/_form.html.erb:1:in `_app_views_classrooms__form_html_erb__1263514474985985335_70126432799800'
+  app/views/classrooms/edit.html.erb:3:in `_app_views_classrooms_edit_html_erb___3266999268112546406_49278500'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (13.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (26.0ms)
+
+
+Started GET "/classrooms/7/edit" for 127.0.0.1 at 2015-08-17 12:27:42 -0600
+Processing by ClassroomsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mBuilding Load (0.2ms)[0m  [1mSELECT "buildings".* FROM "buildings"[0m
+  Rendered classrooms/_form.html.erb (40.5ms)
+  Rendered classrooms/edit.html.erb within layouts/application (41.4ms)
+Completed 200 OK in 210ms (Views: 208.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/buildings.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/apps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/upload.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/pictures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/scaffolds.self-846b4d8cb10999c9aaa4235e577d989143196892371d884f459a562d1087d7fa.css?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/myapplication.self-7b51c1c6729b3390000971b4df95f72eb32eb0f6ac1f0e873b8d2b0c3a049acb.css?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/classrooms.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/application.self-0b6efe868caf8d9da5988008c2d498b113d3c5a9d7caf8d38c0d6c6234e18d13.css?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/apps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/buildings.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/classrooms.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/myapplication.self-58e7f573d4f9b64862d4e18614f2460473c8c550ed8795cb82cc33c1e877f42f.js?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/pictures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/upload.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for 127.0.0.1 at 2015-08-17 12:27:43 -0600
+
+
+Started PATCH "/classrooms/7" for 127.0.0.1 at 2015-08-17 12:27:46 -0600
+Processing by ClassroomsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MLTx7/vVfqlAKVSKE8+XImbLkKoRqBBKlJvPi94uU+XDhQqiJE014/kchsCIAERQhFEKaqZyk/E+mg16YDHnmg==", "classroom"=>{"name"=>"BC117", "building_id"=>"1", "occupancy"=>"24"}, "commit"=>"Update Classroom", "id"=>"7"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mClassroom Exists (0.1ms)[0m  SELECT  1 AS one FROM "classrooms" WHERE ("classrooms"."name" = 'BC117' AND "classrooms"."id" != 7) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "classrooms" SET "building_id" = ?, "updated_at" = ? WHERE "classrooms"."id" = ?[0m  [["building_id", "1"], ["updated_at", "2015-08-17 18:27:46.146901"], ["id", 7]]
+  [1m[35m (3.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/classrooms
+Completed 302 Found in 10ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2015-08-17 12:27:46 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "classrooms"
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT "classrooms".* FROM "classrooms"  ORDER BY name[0m
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 158ms (Views: 156.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/classrooms/7/edit" for 127.0.0.1 at 2015-08-17 12:27:48 -0600
+Processing by ClassroomsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mBuilding Load (0.1ms)[0m  SELECT "buildings".* FROM "buildings"
+  Rendered classrooms/_form.html.erb (3.3ms)
+  Rendered classrooms/edit.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 244ms (Views: 242.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/classrooms/7" for 127.0.0.1 at 2015-08-17 12:27:51 -0600
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?[0m  [["classroom_id", 7]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered classrooms/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 144ms (Views: 142.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2015-08-17 12:27:53 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "classrooms"
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT "classrooms".* FROM "classrooms"  ORDER BY name[0m
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 148ms (Views: 146.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/classrooms/6/edit" for 127.0.0.1 at 2015-08-17 12:27:54 -0600
+Processing by ClassroomsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mBuilding Load (0.2ms)[0m  SELECT "buildings".* FROM "buildings"
+  Rendered classrooms/_form.html.erb (6.2ms)
+  Rendered classrooms/edit.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 239ms (Views: 236.6ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/classrooms/6" for 127.0.0.1 at 2015-08-17 12:27:57 -0600
+Processing by ClassroomsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ufl8Mknku7T7jCd3N3m+z9SWSGCklBCkRhFUGRhML5eiyId/lnzw/kK59T2stm29NgzSoBNOkx/sEJboplOb6A==", "classroom"=>{"name"=>"LL125", "building_id"=>"2", "occupancy"=>"50"}, "commit"=>"Update Classroom", "id"=>"6"}
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mClassroom Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "classrooms" WHERE ("classrooms"."name" = 'LL125' AND "classrooms"."id" != 6) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "classrooms" SET "building_id" = ?, "updated_at" = ? WHERE "classrooms"."id" = ?  [["building_id", "2"], ["updated_at", "2015-08-17 18:27:57.610338"], ["id", 6]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/classrooms
+Completed 302 Found in 8ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2015-08-17 12:27:57 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "classrooms"[0m
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT "classrooms".* FROM "classrooms"  ORDER BY name
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 151ms (Views: 149.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/buildings" for 127.0.0.1 at 2015-08-17 12:28:00 -0600
+Processing by BuildingsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mBuilding Load (0.1ms)[0m  SELECT "buildings".* FROM "buildings"  ORDER BY name
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."building_id" = ?[0m  [["building_id", "1"]]
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."building_id" = ?  [["building_id", "2"]]
+  Rendered buildings/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 140ms (Views: 139.1ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2015-08-17 12:28:46 -0600
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"qB3vF5M5OorRyNtwUshk0T9mT2Te6cdr+0onlG8pYbJbLBRaTKFxwGj9CTrJB7ej3fzVpGkzRNBRS+Vl0TbVzQ=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-17 12:28:46 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "classrooms"[0m
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT "classrooms".* FROM "classrooms"  ORDER BY name
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 149ms (Views: 147.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "classrooms"[0m
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT "classrooms".* FROM "classrooms"  ORDER BY name
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (75.1ms)
+Completed 200 OK in 223ms (Views: 221.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/buildings.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/classrooms.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/scaffolds.self-846b4d8cb10999c9aaa4235e577d989143196892371d884f459a562d1087d7fa.css?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/pictures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/myapplication.self-7b51c1c6729b3390000971b4df95f72eb32eb0f6ac1f0e873b8d2b0c3a049acb.css?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/apps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/upload.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/application.self-0b6efe868caf8d9da5988008c2d498b113d3c5a9d7caf8d38c0d6c6234e18d13.css?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/buildings.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/apps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/myapplication.self-58e7f573d4f9b64862d4e18614f2460473c8c550ed8795cb82cc33c1e877f42f.js?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/classrooms.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/pictures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/upload.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for 127.0.0.1 at 2015-08-17 12:39:37 -0600
+
+
+Started GET "/login" for 127.0.0.1 at 2015-08-17 12:39:56 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 141ms (Views: 140.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2015-08-17 12:40:01 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r21fQib8yP/KgDIC1ephFiD16PR7u4v55e+gHcm6lJNcXKQP+WSDtXO14EhOJbJkwm9yNMxhCEJP7mLsd6Ug7A==", "session"=>{"email"=>"Matt@ninja.dev", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "Matt@ninja.dev"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 72ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-17 12:40:01 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "classrooms"[0m
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT "classrooms".* FROM "classrooms"  ORDER BY name
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 236ms (Views: 235.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/buildings/new" for 127.0.0.1 at 2015-08-17 12:40:03 -0600
+Processing by BuildingsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered buildings/_form.html.erb (2.5ms)
+  Rendered buildings/new.html.erb within layouts/application (57.4ms)
+Completed 200 OK in 235ms (Views: 234.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/buildings" for 127.0.0.1 at 2015-08-17 12:40:13 -0600
+Processing by BuildingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VX3tPd2FAbgOkyw3l/xkSD+qssl60u8zZlKLexdvLvymTBZwAh1K8rem/n0MM7c63TAoCc0IbIjMU0mKqXCagw==", "building"=>{"name"=>"Browning Center", "code"=>"BC"}, "commit"=>"Create Building"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mBuilding Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "buildings" WHERE "buildings"."name" = 'Browning Center' LIMIT 1[0m
+  [1m[35mBuilding Exists (0.1ms)[0m  SELECT  1 AS one FROM "buildings" WHERE "buildings"."code" = 'BC' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "buildings" ("name", "code", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Browning Center"], ["code", "BC"], ["created_at", "2015-08-17 18:40:13.467636"], ["updated_at", "2015-08-17 18:40:13.467636"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/buildings/new
+Completed 302 Found in 11ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/buildings/new" for 127.0.0.1 at 2015-08-17 12:40:13 -0600
+Processing by BuildingsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered buildings/_form.html.erb (1.9ms)
+  Rendered buildings/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 137ms (Views: 136.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/buildings" for 127.0.0.1 at 2015-08-17 12:40:24 -0600
+Processing by BuildingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TQntt7o77OCQl8r5tk3lfKlyvtqcSotd/Gke24lVjy++OBb6ZaOnqimiGLMtgjYOS+gkGiuQCOZWaNwqN0o7UA==", "building"=>{"name"=>"Davis Campus 02", "code"=>"D2"}, "commit"=>"Create Building"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mBuilding Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "buildings" WHERE "buildings"."name" = 'Davis Campus 02' LIMIT 1[0m
+  [1m[35mBuilding Exists (0.1ms)[0m  SELECT  1 AS one FROM "buildings" WHERE "buildings"."code" = 'D2' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "buildings" ("name", "code", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Davis Campus 02"], ["code", "D2"], ["created_at", "2015-08-17 18:40:24.633307"], ["updated_at", "2015-08-17 18:40:24.633307"]]
+  [1m[35m (2.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/buildings/new
+Completed 302 Found in 7ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/buildings/new" for 127.0.0.1 at 2015-08-17 12:40:24 -0600
+Processing by BuildingsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered buildings/_form.html.erb (1.8ms)
+  Rendered buildings/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 259ms (Views: 257.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2015-08-17 12:40:26 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "classrooms"[0m
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT "classrooms".* FROM "classrooms"  ORDER BY name
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 162ms (Views: 161.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/classrooms/7/edit" for 127.0.0.1 at 2015-08-17 12:40:59 -0600
+Processing by ClassroomsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mClassroom Load (0.2ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mBuilding Load (0.3ms)[0m  [1mSELECT "buildings".* FROM "buildings"[0m
+  Rendered classrooms/_form.html.erb (6.8ms)
+  Rendered classrooms/edit.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 182ms (Views: 179.0ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/classrooms/7" for 127.0.0.1 at 2015-08-17 12:41:06 -0600
+Processing by ClassroomsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x+4PH8cH1kSEqsRCpwgw2Xpb9pmCU34Vh06i2xLAoVI03/RSGJ+dDj2fFgg8x+OrmMFsWTWJ/a4tT2AqrN8VLQ==", "classroom"=>{"name"=>"BC117", "building_id"=>"3", "occupancy"=>"24"}, "commit"=>"Update Classroom", "id"=>"7"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mClassroom Exists (0.1ms)[0m  SELECT  1 AS one FROM "classrooms" WHERE ("classrooms"."name" = 'BC117' AND "classrooms"."id" != 7) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "classrooms" SET "building_id" = ?, "updated_at" = ? WHERE "classrooms"."id" = ?[0m  [["building_id", "3"], ["updated_at", "2015-08-17 18:41:06.165771"], ["id", 7]]
+  [1m[35m (1.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/classrooms
+Completed 302 Found in 7ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2015-08-17 12:41:06 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "classrooms"
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT "classrooms".* FROM "classrooms"  ORDER BY name[0m
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 143ms (Views: 141.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/buildings" for 127.0.0.1 at 2015-08-17 12:41:08 -0600
+Processing by BuildingsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mBuilding Load (1.1ms)[0m  [1mSELECT "buildings".* FROM "buildings"  ORDER BY name[0m
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."building_id" = ?  [["building_id", "3"]]
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."building_id" = ?[0m  [["building_id", "4"]]
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."building_id" = ?  [["building_id", "1"]]
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."building_id" = ?[0m  [["building_id", "2"]]
+  Rendered buildings/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 216ms (Views: 213.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2015-08-17 12:41:14 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "classrooms"[0m
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT "classrooms".* FROM "classrooms"  ORDER BY name
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 138ms (Views: 136.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/classrooms/new" for 127.0.0.1 at 2015-08-17 12:42:05 -0600
+Processing by ClassroomsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mBuilding Load (0.2ms)[0m  SELECT "buildings".* FROM "buildings"  ORDER BY name
+  Rendered classrooms/_form.html.erb (3.4ms)
+  Rendered classrooms/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 175ms (Views: 173.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/classrooms" for 127.0.0.1 at 2015-08-17 12:42:17 -0600
+Processing by ClassroomsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5EPuWBZag0Tk42AEI+tPDBX7zacjdx+WOw2CWm9VzTcXchUVycLIDl3Wsk64JJx+92FXZ5StnC2RDECr0Up5SA==", "classroom"=>{"name"=>"D02", "building_id"=>"4", "occupancy"=>"25"}, "commit"=>"Create Classroom"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mClassroom Exists (0.1ms)[0m  SELECT  1 AS one FROM "classrooms" WHERE "classrooms"."name" = 'D02' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "classrooms" ("name", "building_id", "occupancy", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "D02"], ["building_id", "4"], ["occupancy", 25], ["created_at", "2015-08-17 18:42:17.693208"], ["updated_at", "2015-08-17 18:42:17.693208"]]
+  [1m[35m (1.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/classrooms/8
+Completed 302 Found in 7ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/classrooms/8" for 127.0.0.1 at 2015-08-17 12:42:17 -0600
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", "8"]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?[0m  [["classroom_id", 8]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered classrooms/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 140ms (Views: 138.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pictures/new?classroom_id=8" for 127.0.0.1 at 2015-08-17 12:42:19 -0600
+Processing by PicturesController#new as HTML
+  Parameters: {"classroom_id"=>"8"}
+  Rendered pictures/_form.html.erb (30.1ms)
+  Rendered pictures/new.html.erb within layouts/application (53.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 271ms (Views: 269.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-08-17 12:42:29 -0600
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vgVHtPXoA4ExC8IOQ0YY3ZnJHEzhyZ7oILOL3Fk/E0pNNLz5KnBIy4g+EETYicuve1OGjFYTHVOKskkt5yCnNQ==", "picture"=>{"classroom_id"=>"8", "image"=>#<ActionDispatch::Http::UploadedFile:0x007f8f2b96f6b0 @tempfile=#<Tempfile:/tmp/RackMultipart20150817-5777-rri5q5.jpeg>, @original_filename="D2-101_1.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"D2-101_1.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Picture"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" DESC LIMIT 1[0m  [["classroom_id", 8]]
+Completed 500 Internal Server Error in 771ms (ActiveRecord: 0.3ms)
+
+NoMethodError (undefined method `id' for nil:NilClass):
+  app/controllers/pictures_controller.rb:29:in `create'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.3ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x000000069276f0 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x00000006927448 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x000000069248d8 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+  [1m[36mClassroom Load (0.3ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms"  ORDER BY "classrooms"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "pictures" WHERE "pictures"."classroom_id" = ?  [["classroom_id", 6]]
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-08-17 12:44:58 -0600
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vgVHtPXoA4ExC8IOQ0YY3ZnJHEzhyZ7oILOL3Fk/E0pNNLz5KnBIy4g+EETYicuve1OGjFYTHVOKskkt5yCnNQ==", "picture"=>{"classroom_id"=>"8", "image"=>#<ActionDispatch::Http::UploadedFile:0x0000000687baa8 @tempfile=#<Tempfile:/tmp/RackMultipart20150817-5777-16uyfhw.jpeg>, @original_filename="D2-101_1.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"D2-101_1.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Picture"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "pictures"[0m
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" DESC LIMIT 1  [["classroom_id", 8]]
+Completed 500 Internal Server Error in 700ms (ActiveRecord: 1.2ms)
+
+NoMethodError (undefined method `id' for nil:NilClass):
+  app/controllers/pictures_controller.rb:32:in `create'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.0ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x000000069276f0 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x00000006927448 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x000000069248d8 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-08-17 12:45:45 -0600
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vgVHtPXoA4ExC8IOQ0YY3ZnJHEzhyZ7oILOL3Fk/E0pNNLz5KnBIy4g+EETYicuve1OGjFYTHVOKskkt5yCnNQ==", "picture"=>{"classroom_id"=>"8", "image"=>#<ActionDispatch::Http::UploadedFile:0x00000006568528 @tempfile=#<Tempfile:/tmp/RackMultipart20150817-5777-zvk88z.jpeg>, @original_filename="D2-101_1.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"D2-101_1.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Picture"}
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 8]]
+Completed 500 Internal Server Error in 694ms (ActiveRecord: 0.8ms)
+
+NoMethodError (undefined method `pictures' for nil:NilClass):
+  app/controllers/pictures_controller.rb:29:in `create'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.4ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x000000069276f0 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x00000006927448 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x000000069248d8 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-08-17 12:50:39 -0600
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vgVHtPXoA4ExC8IOQ0YY3ZnJHEzhyZ7oILOL3Fk/E0pNNLz5KnBIy4g+EETYicuve1OGjFYTHVOKskkt5yCnNQ==", "picture"=>{"classroom_id"=>"8", "image"=>#<ActionDispatch::Http::UploadedFile:0x007f8ef4c2a8f0 @tempfile=#<Tempfile:/tmp/RackMultipart20150817-5777-dfqd82.jpeg>, @original_filename="D2-101_1.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"D2-101_1.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Picture"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 8]]
+Completed 500 Internal Server Error in 778ms (ActiveRecord: 1.0ms)
+
+NoMethodError (undefined method `nil' for #<Classroom:0x007f8f2bef87a8>):
+  app/controllers/pictures_controller.rb:29:in `create'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.6ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x000000069276f0 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x00000006927448 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x000000069248d8 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-08-17 12:51:50 -0600
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vgVHtPXoA4ExC8IOQ0YY3ZnJHEzhyZ7oILOL3Fk/E0pNNLz5KnBIy4g+EETYicuve1OGjFYTHVOKskkt5yCnNQ==", "picture"=>{"classroom_id"=>"8", "image"=>#<ActionDispatch::Http::UploadedFile:0x007f8f2a9aa3d8 @tempfile=#<Tempfile:/tmp/RackMultipart20150817-5777-1gpxzrj.jpeg>, @original_filename="D2-101_1.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"D2-101_1.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Picture"}
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" DESC LIMIT 1  [["classroom_id", 8]]
+Completed 500 Internal Server Error in 651ms (ActiveRecord: 1.1ms)
+
+NoMethodError (undefined method `id' for nil:NilClass):
+  app/controllers/pictures_controller.rb:32:in `create'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.0ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x000000069276f0 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x00000006927448 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x000000069248d8 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+  [1m[36mClassroom Load (0.3ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms"  ORDER BY "classrooms"."id" ASC LIMIT 1[0m
+  [1m[35mPicture Load (0.2ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" DESC LIMIT 1  [["classroom_id", 6]]
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-08-17 12:53:30 -0600
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vgVHtPXoA4ExC8IOQ0YY3ZnJHEzhyZ7oILOL3Fk/E0pNNLz5KnBIy4g+EETYicuve1OGjFYTHVOKskkt5yCnNQ==", "picture"=>{"classroom_id"=>"8", "image"=>#<ActionDispatch::Http::UploadedFile:0x00000002ace020 @tempfile=#<Tempfile:/tmp/RackMultipart20150817-5777-941nus.jpeg>, @original_filename="D2-101_1.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"D2-101_1.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Picture"}
+  [1m[36mClassroom Load (0.2ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" DESC LIMIT 1  [["classroom_id", 8]]
+Completed 500 Internal Server Error in 679ms (ActiveRecord: 0.3ms)
+
+NoMethodError (undefined method `id' for nil:NilClass):
+  app/controllers/pictures_controller.rb:32:in `create'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.5ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x000000069276f0 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x00000006927448 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x000000069248d8 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-08-17 12:54:03 -0600
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vgVHtPXoA4ExC8IOQ0YY3ZnJHEzhyZ7oILOL3Fk/E0pNNLz5KnBIy4g+EETYicuve1OGjFYTHVOKskkt5yCnNQ==", "picture"=>{"classroom_id"=>"8", "image"=>#<ActionDispatch::Http::UploadedFile:0x007f8f2a354ec0 @tempfile=#<Tempfile:/tmp/RackMultipart20150817-5777-141g55s.jpeg>, @original_filename="D2-101_1.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"D2-101_1.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Picture"}
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 8]]
+Completed 500 Internal Server Error in 661ms (ActiveRecord: 0.9ms)
+
+NoMethodError (undefined method `picture' for #<Classroom:0x007f8f2a967538>):
+  app/controllers/pictures_controller.rb:29:in `create'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.6ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x000000069276f0 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x00000006927448 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x000000069248d8 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-08-17 12:54:33 -0600
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vgVHtPXoA4ExC8IOQ0YY3ZnJHEzhyZ7oILOL3Fk/E0pNNLz5KnBIy4g+EETYicuve1OGjFYTHVOKskkt5yCnNQ==", "picture"=>{"classroom_id"=>"8", "image"=>#<ActionDispatch::Http::UploadedFile:0x0000000641ba58 @tempfile=#<Tempfile:/tmp/RackMultipart20150817-5777-1k9peym.jpeg>, @original_filename="D2-101_1.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"D2-101_1.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Picture"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?[0m  [["classroom_id", 8]]
+Completed 500 Internal Server Error in 652ms (ActiveRecord: 1.0ms)
+
+NoMethodError (undefined method `id' for nil:NilClass):
+  app/controllers/pictures_controller.rb:32:in `create'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.1ms)
+Cannot render console with content type multipart/form-dataAllowed content types: [#<Mime::Type:0x000000069276f0 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x00000006927448 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x000000069248d8 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+  [1m[36mClassroom Load (0.2ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms"  ORDER BY "classrooms"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "pictures" WHERE "pictures"."classroom_id" = ?  [["classroom_id", 6]]
+  [1m[36mClassroom Load (0.2ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms"  ORDER BY "classrooms"."id" DESC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "pictures" WHERE "pictures"."classroom_id" = ?  [["classroom_id", 8]]
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-08-17 12:56:13 -0600
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vgVHtPXoA4ExC8IOQ0YY3ZnJHEzhyZ7oILOL3Fk/E0pNNLz5KnBIy4g+EETYicuve1OGjFYTHVOKskkt5yCnNQ==", "picture"=>{"classroom_id"=>"8", "image"=>#<ActionDispatch::Http::UploadedFile:0x007f8ef400bbc8 @tempfile=#<Tempfile:/tmp/RackMultipart20150817-5777-45zinz.jpeg>, @original_filename="D2-101_1.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"D2-101_1.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Picture"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "pictures" WHERE "pictures"."classroom_id" = ?[0m  [["classroom_id", 8]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mPicture Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "pictures" WHERE "pictures"."name" = 'D02_2' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pictures" ("image", "classroom_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["image", "D2-101_1.jpeg"], ["classroom_id", 8], ["name", "D02_2"], ["created_at", "2015-08-17 18:56:13.890803"], ["updated_at", "2015-08-17 18:56:13.890803"]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 8]]
+Redirected to http://localhost:3000/classrooms/8
+Completed 302 Found in 693ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/classrooms/8" for 127.0.0.1 at 2015-08-17 12:56:13 -0600
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", "8"]]
+  [1m[36mPicture Load (0.2ms)[0m  [1mSELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?[0m  [["classroom_id", 8]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered classrooms/show.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 148ms (Views: 145.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/apps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/buildings.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/classrooms.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/pictures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/scaffolds.self-846b4d8cb10999c9aaa4235e577d989143196892371d884f459a562d1087d7fa.css?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/application.self-0b6efe868caf8d9da5988008c2d498b113d3c5a9d7caf8d38c0d6c6234e18d13.css?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/myapplication.self-7b51c1c6729b3390000971b4df95f72eb32eb0f6ac1f0e873b8d2b0c3a049acb.css?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/upload.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/apps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/buildings.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/classrooms.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/myapplication.self-58e7f573d4f9b64862d4e18614f2460473c8c550ed8795cb82cc33c1e877f42f.js?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/pictures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/upload.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/assets/add-button-md-03226d12be44d96caa21e4dfb43b93d0500e2cc50aeff73881cd60399bb31f88.png" for 127.0.0.1 at 2015-08-17 12:56:14 -0600
+
+
+Started GET "/buildings" for 127.0.0.1 at 2015-08-17 12:56:35 -0600
+Processing by BuildingsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mBuilding Load (0.2ms)[0m  SELECT "buildings".* FROM "buildings"  ORDER BY name
+  [1m[36mClassroom Load (0.2ms)[0m  [1mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."building_id" = ?[0m  [["building_id", "3"]]
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."building_id" = ?  [["building_id", "4"]]
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."building_id" = ?[0m  [["building_id", "1"]]
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."building_id" = ?  [["building_id", "2"]]
+  Rendered buildings/index.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 171ms (Views: 166.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2015-08-17 12:56:59 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "classrooms"
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT "classrooms".* FROM "classrooms"  ORDER BY name[0m
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 8]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 154ms (Views: 152.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/classrooms/8/edit" for 127.0.0.1 at 2015-08-17 12:57:02 -0600
+Processing by ClassroomsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mClassroom Load (0.2ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mBuilding Load (0.2ms)[0m  SELECT "buildings".* FROM "buildings"  ORDER BY name
+  Rendered classrooms/_form.html.erb (4.6ms)
+  Rendered classrooms/edit.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 149ms (Views: 147.4ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/classrooms/8" for 127.0.0.1 at 2015-08-17 12:57:16 -0600
+Processing by ClassroomsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+LMa1cvivIkFxUWMCG1yYGGMPFVcvJgUX5S5z8Xcbw0LguGYFHr3w7zwl8aToqESgxamletmG6/1lXs+e8Pbcg==", "classroom"=>{"name"=>"D2_101", "building_id"=>"3", "occupancy"=>"25"}, "commit"=>"Update Classroom", "id"=>"8"}
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mClassroom Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "classrooms" WHERE ("classrooms"."name" = 'D2_101' AND "classrooms"."id" != 8) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "classrooms" SET "name" = ?, "building_id" = ?, "updated_at" = ? WHERE "classrooms"."id" = ?  [["name", "D2_101"], ["building_id", "3"], ["updated_at", "2015-08-17 18:57:16.499058"], ["id", 8]]
+  [1m[36m (4.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/classrooms
+Completed 302 Found in 12ms (ActiveRecord: 5.4ms)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2015-08-17 12:57:16 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "classrooms"[0m
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT "classrooms".* FROM "classrooms"  ORDER BY name
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 8]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 157ms (Views: 155.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/classrooms/8/edit" for 127.0.0.1 at 2015-08-17 12:57:20 -0600
+Processing by ClassroomsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mBuilding Load (0.2ms)[0m  [1mSELECT "buildings".* FROM "buildings"  ORDER BY name[0m
+  Rendered classrooms/_form.html.erb (2.9ms)
+  Rendered classrooms/edit.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 219ms (Views: 216.9ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/classrooms/8" for 127.0.0.1 at 2015-08-17 12:57:23 -0600
+Processing by ClassroomsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mnUoaCw0ueDwm+VVCIaZULfYpzfHVQJ5NXdsSVpyobFpRNMl86zyqkmuNx+TSUoiVUI993CPgcKfdq645G0Vzg==", "classroom"=>{"name"=>"D2101", "building_id"=>"3", "occupancy"=>"25"}, "commit"=>"Update Classroom", "id"=>"8"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mClassroom Exists (0.2ms)[0m  SELECT  1 AS one FROM "classrooms" WHERE ("classrooms"."name" = 'D2101' AND "classrooms"."id" != 8) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "classrooms" SET "name" = ?, "updated_at" = ? WHERE "classrooms"."id" = ?[0m  [["name", "D2101"], ["updated_at", "2015-08-17 18:57:23.896088"], ["id", 8]]
+  [1m[35m (2.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/classrooms
+Completed 302 Found in 11ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2015-08-17 12:57:23 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "classrooms"
+  [1m[36mClassroom Load (0.2ms)[0m  [1mSELECT "classrooms".* FROM "classrooms"  ORDER BY name[0m
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 8]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 164ms (Views: 162.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/classrooms/8" for 127.0.0.1 at 2015-08-17 12:57:27 -0600
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", "8"]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  [["classroom_id", 8]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered classrooms/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 156ms (Views: 153.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pictures/new?classroom_id=8" for 127.0.0.1 at 2015-08-17 12:57:39 -0600
+Processing by PicturesController#new as HTML
+  Parameters: {"classroom_id"=>"8"}
+  Rendered pictures/_form.html.erb (1.1ms)
+  Rendered pictures/new.html.erb within layouts/application (1.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 141ms (Views: 139.9ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-08-17 12:57:46 -0600
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YeDAYcYnQm6C8jc6myunzQeBp138Nh1Dye4yUS0lzLWS0TssGb8JJDvH5XAA5HS/5Rs9nUvsnvhj7/Cgkzp4yg==", "picture"=>{"classroom_id"=>"8", "image"=>#<ActionDispatch::Http::UploadedFile:0x007f8ef4114cb8 @tempfile=#<Tempfile:/tmp/RackMultipart20150817-5777-34k11w.jpeg>, @original_filename="D2-101_2.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"D2-101_2.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Picture"}
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "pictures" WHERE "pictures"."classroom_id" = ?  [["classroom_id", 8]]
+  [1m[36mPicture Load (0.2ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" DESC LIMIT 1[0m  [["classroom_id", 8]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPicture Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "pictures" WHERE "pictures"."name" = 'D2101_17' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "pictures" ("image", "classroom_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["image", "D2-101_2.jpeg"], ["classroom_id", 8], ["name", "D2101_17"], ["created_at", "2015-08-17 18:57:47.565826"], ["updated_at", "2015-08-17 18:57:47.565826"]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 8]]
+Redirected to http://localhost:3000/classrooms/8
+Completed 302 Found in 770ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/classrooms/8" for 127.0.0.1 at 2015-08-17 12:57:47 -0600
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", "8"]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?[0m  [["classroom_id", 8]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered classrooms/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 191ms (Views: 189.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pictures/new?classroom_id=8" for 127.0.0.1 at 2015-08-17 12:57:49 -0600
+Processing by PicturesController#new as HTML
+  Parameters: {"classroom_id"=>"8"}
+  Rendered pictures/_form.html.erb (1.0ms)
+  Rendered pictures/new.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 175ms (Views: 174.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-08-17 12:57:55 -0600
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XSesEBz9MIj/NqiuDBQPc3uN2NOtBiAR+Ny02z+xACSuFlddw2V7wkYDeuSX29wBmRdCExrco6pS3XYqga60Ww==", "picture"=>{"classroom_id"=>"8", "image"=>#<ActionDispatch::Http::UploadedFile:0x007f8f29907620 @tempfile=#<Tempfile:/tmp/RackMultipart20150817-5777-1r6laip.jpeg>, @original_filename="D2-101_3.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"D2-101_3.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Picture"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "pictures" WHERE "pictures"."classroom_id" = ?[0m  [["classroom_id", 8]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" DESC LIMIT 1  [["classroom_id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mPicture Exists (0.1ms)[0m  SELECT  1 AS one FROM "pictures" WHERE "pictures"."name" = 'D2101_18' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "pictures" ("image", "classroom_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["image", "D2-101_3.jpeg"], ["classroom_id", 8], ["name", "D2101_18"], ["created_at", "2015-08-17 18:57:56.590986"], ["updated_at", "2015-08-17 18:57:56.590986"]]
+  [1m[35m (1.9ms)[0m  commit transaction
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 8]]
+Redirected to http://localhost:3000/classrooms/8
+Completed 302 Found in 723ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/classrooms/8" for 127.0.0.1 at 2015-08-17 12:57:56 -0600
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mClassroom Load (0.1ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", "8"]]
+  [1m[35mPicture Load (0.1ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  [["classroom_id", 8]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered classrooms/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 188ms (Views: 186.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pictures/new?classroom_id=8" for 127.0.0.1 at 2015-08-17 12:57:58 -0600
+Processing by PicturesController#new as HTML
+  Parameters: {"classroom_id"=>"8"}
+  Rendered pictures/_form.html.erb (1.0ms)
+  Rendered pictures/new.html.erb within layouts/application (1.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 144ms (Views: 143.6ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2015-08-17 12:58:04 -0600
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kB+nKiCfn9izlT1+XHz+gxqjOxLc2GbbSueH7S+Yu8JjLlxn/wfUkgqg7zTHsy3x+Dmh0msC5WDg5kUckYcPvQ==", "picture"=>{"classroom_id"=>"8", "image"=>#<ActionDispatch::Http::UploadedFile:0x007f8f2b704c90 @tempfile=#<Tempfile:/tmp/RackMultipart20150817-5777-287icx.jpeg>, @original_filename="D2-101_4.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"D2-101_4.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Picture"}
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "pictures" WHERE "pictures"."classroom_id" = ?  [["classroom_id", 8]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" DESC LIMIT 1[0m  [["classroom_id", 8]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPicture Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "pictures" WHERE "pictures"."name" = 'D2101_19' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "pictures" ("image", "classroom_id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["image", "D2-101_4.jpeg"], ["classroom_id", 8], ["name", "D2101_19"], ["created_at", "2015-08-17 18:58:05.138107"], ["updated_at", "2015-08-17 18:58:05.138107"]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mClassroom Load (0.2ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", 8]]
+Redirected to http://localhost:3000/classrooms/8
+Completed 302 Found in 853ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/classrooms/8" for 127.0.0.1 at 2015-08-17 12:58:05 -0600
+Processing by ClassroomsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mClassroom Load (0.1ms)[0m  [1mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT 1  [["id", "8"]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?[0m  [["classroom_id", 8]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered classrooms/show.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 210ms (Views: 208.4ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2015-08-17 12:58:26 -0600
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"rFdnyYMl1YD+WCTTNgGWpMYORbAzjo/v3UWs7l17Cz9fZpyEXL2eykdt9pmtzkXWJJTfcIRUDFR3RG4f42S/QA=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-17 12:58:26 -0600
+Processing by ClassroomsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "classrooms"[0m
+  [1m[35mClassroom Load (0.2ms)[0m  SELECT "classrooms".* FROM "classrooms"  ORDER BY name
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 7]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 8]]
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1[0m  [["classroom_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "pictures".* FROM "pictures" WHERE "pictures"."classroom_id" = ?  ORDER BY "pictures"."id" ASC LIMIT 1  [["classroom_id", 6]]
+  Rendered classrooms/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 182ms (Views: 180.0ms | ActiveRecord: 0.6ms)
