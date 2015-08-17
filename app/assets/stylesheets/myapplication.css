@@ -76,7 +76,7 @@ div .CDB_LOGIN {
 }
 
 .CDB_ADMIN {
-	font-size: 15px;
+	font-size: 20px;
 }
 
 .CDB_SRCH_ICON {
@@ -98,7 +98,7 @@ div .CDB_LOGIN {
 }
 
 .CDB_ADD_BUTTON {
-	padding-left: 100px;
+	
 }
 
 a:hover .CDB_NO_HOVER {
@@ -119,5 +119,15 @@ a:hover .CDB_NO_HOVER {
 .CDB_BLDG_TH > th {
 	background-color: purple;
 	color: white;
+	font-size: 20px;
+}
+
+.CDB_ADMIN > a a:visited {
+	color:white;
+	font-size: 20px;
+}
+
+#notice {
+	color:white;
 	font-size: 20px;
 }
