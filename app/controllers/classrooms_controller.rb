@@ -15,7 +15,7 @@ class ClassroomsController < ApplicationController
   def show
 		@classroom = Classroom.find(params[:id])
 		@pictures = @classroom.pictures
-  end
+	end
 
   # GET /classrooms/new
   def new
@@ -75,6 +75,6 @@ class ClassroomsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def classroom_params
-      params.require(:classroom).permit(:name, :building_id, :occupancy)
+      params.require(:classroom).permit(:name, :building_id, :occupancy, :smartboard, :pc, :doccam)
     end
 end

@@ -1,3 +1,6 @@
+<div class='container'>
+	<div class='row'>
+		<div class='well col-md-offset-4 col-md-4'>
 <%= form_for(@classroom) do |f| %>
   <% if @classroom.errors.any? %>
     <div id="error_explanation">
@@ -23,7 +26,40 @@
     <%= f.label :occupancy %><br>
     <%= f.number_field :occupancy %>
   </div>
+
+	<div class="field">
+		<table class="Tech">
+			<tr>
+				<td>
+					<%= f.check_box :smartboard %> Smartboard
+				</td>
+				<td>
+					<%= f.check_box :pc %> PC
+				</td>
+				<td>
+					<%= f.check_box :doccam %> Document Camera
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<%= f.check_box :projector %> Projector
+				</td>
+				<td>
+					<%= f.check_box :extron %> Extron
+				</td>
+				<td>
+					<%= f.check_box :bluray %> Bluray/DVD Player
+				</td>
+			</tr>
+		</table>
+	</div>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+</div>
+</div>
+</div>
+

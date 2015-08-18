@@ -29,6 +29,24 @@ $(document).ready( function() {
 	});
 	
 	$('div.modal-content').css('width', 1054);
+	
+	if ($('div.CDB_ADMIN').length)
+	{
+		$('.wrapper').css('margin-bottom', 150);
+	}
+	
+	$('#Filters').click(function(){
+		if ($('#CDB_FILTER').hasClass('showFilter'))
+		{
+			$('#CDB_FILTER').animate({left: '-200px'});
+			$('#CDB_FILTER').removeClass('showFilter');
+		}
+		else {
+			$('#CDB_FILTER').animate({left: '0px'});
+			$('#CDB_FILTER').addClass('showFilter');
+		}
+	});
+	
 });
 
 $(window).resize(function(){

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150813194735) do
+ActiveRecord::Schema.define(version: 20150818210308) do
 
   create_table "buildings", force: :cascade do |t|
     t.string   "name"
@@ -27,6 +27,12 @@ ActiveRecord::Schema.define(version: 20150813194735) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "classroom_id"
+    t.boolean  "smartboard"
+    t.boolean  "pc"
+    t.boolean  "projector"
+    t.boolean  "extron"
+    t.boolean  "bluray"
+    t.boolean  "doccam"
   end
 
   add_index "classrooms", ["classroom_id"], name: "index_classrooms_on_classroom_id"

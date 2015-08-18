@@ -6,4 +6,15 @@ class Classroom < ActiveRecord::Base
 	def thumbnail
 		self.pictures.first
 	end
+
+	def tech
+		result = []
+		result << "Smartboard" if smartboard
+		result << "PC" if pc
+		result << "Document Camera"	if doccam
+		result << "Projector" if projector
+		result << "Extron" if extron
+		result << "Bluray/DVD Player" if bluray
+		return result
+	end
 end
