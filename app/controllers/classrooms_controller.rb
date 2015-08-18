@@ -5,7 +5,9 @@ class ClassroomsController < ApplicationController
   # GET /classrooms
   # GET /classrooms.json
   def index
-    @classrooms = Classroom.all.order('name')
+    @search = Classroom.search(params[:q])
+		@classrooms = @search.result.order('name')
+		#@classrooms = Classroom.all.order('name')
   end
 
   # GET /classrooms/1
