@@ -1,0 +1,47 @@
+<% if current_user %>
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+				<% if current_user %>
+							<div class='col-md-3'></div>
+										<%= link_to new_classroom_path do %>
+										<div class='col-md-2 col-sm-5 well CDB_NEW'>New Classroom</div>
+									  <% end %>
+										<div class='col-md-2'></div>
+										<%= link_to new_user_path do %>
+										<div class='col-md-2 col-sm-5 well CDB_NEW'>New User</div>
+										<% end %>
+										<div class='col-md-3'></div>
+							</div>
+				<% end %>
+</div>
+<h1 style="text-align:center">Users</h1>
+<div class="container"> 
+				<table class="table">
+								<tr class="CDB_BLDG_TH">
+												<th>Name</th>
+												<th>Email</th>
+								</tr>
+								<% @users.each do |user| %>
+												<tr class='CDB_BLDG_ROW'>
+																<td>
+																				<%= user.first_name %> <%= user.last_name %>
+																</td>
+																<td>
+																				<%= user.email %>
+																</td>
+												</tr>
+								<% end %>
+				</table>
+</div>
+
+<div class="container">
+								<div class="col-xs-4"></div>
+								<div class="col-xs-2 well text-center CDB_NEW">
+									<%= link_to 'Back', classrooms_path %>
+							 </div>
+							 <div class="col-xs-4"></div>
+</div>
+<% else %>
+<h1>You are not authorized to see this page</h1>
+<% end %>

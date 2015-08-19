@@ -20,13 +20,17 @@
   </div>
   <div class="field">
   	<%= f.label :building_id %>
-		<%= f.select "building_id", options_for_select(Building.all.order('name').collect{ |b| [b.name, b.id] }) %>
+		<%= f.select "building_id", options_for_select(Building.all.order('name').collect{ |b| [b.name, b.id] }, @classroom.building_id) %>
 	</div>
   <div class="field">
     <%= f.label :occupancy %><br>
     <%= f.number_field :occupancy %>
   </div>
 
+	<div class='field'>
+					<p><%= f.label :description %></p>
+					<%= f.text_area :description %>
+	</div>
 	<div class="field">
 		<table class="Tech">
 			<tr>

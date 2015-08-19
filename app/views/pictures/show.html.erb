@@ -1,3 +1,4 @@
+<% if current_user %>
 <p id="notice"><%= notice %></p>
 
 <%= image_tag @picture.image_url(:thumb) if @picture.image? %>
@@ -5,3 +6,6 @@
 
 <%= link_to 'Edit', edit_picture_path(@picture) %> |
 <%= link_to 'Back', pictures_path %>
+<% else %>
+<h1>You are not authorized to view this page</h1>
+<% end %>

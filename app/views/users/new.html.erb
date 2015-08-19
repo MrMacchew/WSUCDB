@@ -1,3 +1,4 @@
+<% if current_user %>
 <%= form_for(@user) do |u| %>
  <% if @user.errors.any? %>
 	<div id="error_explanation">
@@ -13,4 +14,4 @@
 	</p>
 </div>
 <% end %>
-	
+<% end %>	

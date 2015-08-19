@@ -1,6 +1,10 @@
-<h1>Editing Picture</h1>
+<% if current_user %>
+	<h1>Editing Picture</h1>
 
 <%= render 'form' %>
 
 <%= link_to 'Show', @picture %> |
 <%= link_to 'Back', pictures_path %>
+<% else %>
+				<h1>You are not authorized to view this page</h1>
+<% end %>

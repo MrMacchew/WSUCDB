@@ -1,5 +1,9 @@
-<h1>New Building</h1>
+<% if current_user %>
+				<h1>New Building</h1>
 
 <%= render 'form' %>
 
 <%= link_to 'Back', classrooms_path, :class => 'btn btn-default' %>
+<% else %>
+				<h1>You are not authorized to view this page</h1>
+<% end %>
