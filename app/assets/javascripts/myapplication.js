@@ -1,8 +1,8 @@
-$(document).ready( function() {  
-	$('div.CDB_TH_NAME').each(function(){
-		$(this).css('width', $(this).siblings('img').width()).css('height', $(this).siblings('img').height());
+$(window).load( function() {  
+	/*$('div.CDB_TH_NAME').each(function(){
+		//$(this).css('width', $(this).siblings('img').width()).css('height', $(this).siblings('img').height());
 		//$(this).parent().css('width', $(this).siblings('img').width())
-	});
+	});*/
 	$('div.CDB_NAME').each(function(){
 		$(this).css('width', $(this).siblings('img').width());
 	});
@@ -27,8 +27,6 @@ $(document).ready( function() {
 		$(this).css('background-color', 'white');
 		$(this).css('color', 'inherit');
 	});
-	
-	$('div.modal-content').css('width', 1054);
 	
 	if ($('div.CDB_ADMIN').length)
 	{

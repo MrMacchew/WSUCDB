@@ -7,7 +7,7 @@
 										<%= link_to new_classroom_path do %>
 										<div class='col-md-2 col-sm-5 well CDB_NEW'>New Classroom</div>
 									  <% end %>
-										<div class='col-md-2'></div>
+										<div class='col-md-2 col-sm-2'></div>
 										<%= link_to new_user_path do %>
 										<div class='col-md-2 col-sm-5 well CDB_NEW'>New User</div>
 										<% end %>
@@ -15,7 +15,11 @@
 							</div>
 				<% end %>
 </div>
-<h1 style="text-align:center">Users</h1>
+<div class='container'>
+	<div class='well'>
+		<h1 style="text-align:center">Users</h1>
+	</div>
+</div>
 <div class="container"> 
 				<table class="table">
 								<tr class="CDB_BLDG_TH">
@@ -28,7 +32,7 @@
 																				<%= user.first_name %> <%= user.last_name %>
 																</td>
 																<td>
-																				<%= user.email %>
+																				<%= user.email %> | <%= link_to "Destroy", user, method: :delete, data: { confirm: 'Delete user?' } %>
 																</td>
 												</tr>
 								<% end %>

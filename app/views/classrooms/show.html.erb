@@ -9,7 +9,7 @@
 										<div class='text-center'>	<%= link_to 'Edit', edit_classroom_path(@classroom) %> </div>
 									<% end %>
 									<div class="text-center">
-										<p>Description of the classroom goes here</p>
+										<p><%= @classroom.description %></p>
 										<p><strong>Building:</strong> <%= Building.find(@classroom.building_id).name %></p>
 										<p><strong>Seats: </strong><%= @classroom.occupancy %></p>
 										<p><strong>Technology: </strong>

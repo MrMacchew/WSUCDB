@@ -16,6 +16,7 @@
 div .wrapper {
 	position:inherit;
 	margin-bottom: 100px;
+	width: 250px;
 }
 
 div .CDB_TH_NAME {
@@ -42,6 +43,7 @@ div .CDB_NAME {
 	background-color: #492365;
 	color: white;
 	font-size: 30px;
+	width: 250px;
 }
 
 div.CDB_NAME > a {
@@ -150,3 +152,18 @@ a:hover .CDB_NO_HOVER {
 table.Tech td {
 	padding: 10px;
 }
+
+.file_wrapper {
+	margin-left:40%;
+	margin-right:40%;
+}
+
+div.modal-content {
+	width: 1054px;
+}
+
+div.CDB_TH_NAME {
+	width: 250px;
+	height: 250px;
+}
+

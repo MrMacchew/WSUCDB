@@ -15,7 +15,11 @@
 							</div>
 				<% end %>
 </div>
-<h1 style="text-align:center">Listing Buildings</h1>
+<div class='container'>
+	<div class='well'>
+		<h1 style="text-align:center">Buildings</h1>
+	</div>
+</div>
 <div class="container"> 
 				<table class="table">
 								<tr class="CDB_BLDG_TH">
@@ -26,7 +30,7 @@
 								<% @buildings.each do |building| %>
 												<tr class='CDB_BLDG_ROW'>
 																<td>
-																				<%= building.name %>
+																				<%= link_to building.name, edit_building_path(building) %>
 																</td>
 																<td>
 																				<%= building.code %>
@@ -34,7 +38,7 @@
 																<td>
 																				<% building.classrooms.each do |classroom| %>
 																						<p>
-																								<%= classroom.name %>
+																								<%= link_to classroom.name, classroom %>
 																						</p>
 																				<% end %>
 																</td>
