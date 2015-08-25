@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <div id="CDB_FILTER">
-				<%= search_form_for @search do |f| %>
+				<%= search_form_for @search, :remote=>"true", url: classrooms_path, :method => :get do |f| %>
 								<div class='field'>
 												<p><strong>Building</strong></p>
 												<%= f.select "building_id_eq", options_for_select(Building.all.order('name').collect{ |b| [b.name, b.id] }), :include_blank => "Any" %>
@@ -47,4 +47,4 @@
 		<h1 class="text-center">Classrooms</h1>
 	</div>
 </div>
-	<%= render 'classrooms' %>	
+<div class="container" id="classrooms"><%= render 'classrooms' %></div>	
