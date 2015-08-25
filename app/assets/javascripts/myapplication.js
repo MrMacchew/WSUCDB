@@ -6,9 +6,9 @@ $(window).load( function() {
 	$('div.CDB_NAME').each(function(){
 		$(this).css('width', $(this).siblings('img').width());
 	});
-	$('div.CDB_NAME').each(function(){
+	/*$('div.CDB_NAME').each(function(){
 		$(this).css('width', $(this).parent().width()-13);
-	})
+	})*/
 	
 	/*$('div.wrapper').each(function(){
 		$(this).css('height', $(this).child('img').height());
