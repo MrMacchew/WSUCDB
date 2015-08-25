@@ -1,4 +1,4 @@
-$(window).load( function() {  
+$(function() {  
 	/*$('div.CDB_TH_NAME').each(function(){
 		//$(this).css('width', $(this).siblings('img').width()).css('height', $(this).siblings('img').height());
 		//$(this).parent().css('width', $(this).siblings('img').width())
@@ -32,18 +32,33 @@ $(window).load( function() {
 	{
 		$('.wrapper').css('margin-bottom', 150);
 	}
-	
+
 	$('#Filters').click(function(){
-		if ($('#CDB_FILTER').hasClass('showFilter'))
-		{
-			$('#CDB_FILTER').animate({left: '-200px'});
-			$('#CDB_FILTER').removeClass('showFilter');
-		}
-		else {
-			$('#CDB_FILTER').animate({left: '0px'});
-			$('#CDB_FILTER').addClass('showFilter');
-		}
+	if ($('#CDB_FILTER').hasClass('showFilter'))
+	{
+		$('#CDB_FILTER').animate({left: '-210px'});
+		$('#CDB_FILTER').removeClass('showFilter');
+	}
+	else {
+		$('#CDB_FILTER').animate({left: '0px'});
+		$('#CDB_FILTER').addClass('showFilter');
+	}
+
+	if(top.location.pathname === '/' || top.location.pathname === '/classrooms')
+	{
+		$('#filterTag').show();
+	}
+	else
+	{
+		$('#filterTag').hide();
+	}
+	
+	$('#clearFilters').click(function(){
+		//Clear out all filter settings back to default.
+		$('#classroom_search').find('input:checkbox').removeAttr('checked');
+		$('#classroom_search').find('select').val('');
 	});
+});
 	
 });
 
@@ -55,3 +70,5 @@ $(window).resize(function(){
 		$(this).css('width', $(this).siblings('img').width());
 	});
 });
+
+

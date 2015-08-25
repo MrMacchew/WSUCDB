@@ -1,0 +1,38 @@
+<% if @classrooms.count == 0 %>
+	<div class="container">
+		<h2 style="text-align: center">No Classrooms are in the database at this time.</h2>
+	</div>
+<% else %>
+	<div class="container">
+		<div class="row">			
+			<% @classrooms.each do |classroom| %>			
+					<%= link_to classroom_path(classroom) do %>
+						<div class='wrapper col-xs-6 col-sm-4 col-md-3'>
+							<div class="CDB_TH_NAME">
+								<div class="wrapper-content">
+									<p></p>
+									<p></p>
+									<span class="glyphicon glyphicon-search CDB_SRCH_ICON"></span>
+								</div>
+							</div>
+						<% if classroom.pictures.first.nil? %>
+							<div> No Image </div>
+						<% else %>	
+							<%= image_tag classroom.pictures.first.image_url(:thumb).to_s %>
+						<% end %>
+						<div class='CDB_NAME'>
+							<%= Building.find(classroom.building_id).name %><br/>
+							<%= classroom.name[2,4] %>
+								<% if current_user %>
+									<div class='CDB_ADMIN'>
+									<%= link_to 'Edit', edit_classroom_path(classroom) %> | 
+									<%= link_to 'Destroy', classroom, method: :delete, data: { confirm: 'Are you sure?' } %>
+								</div>
+							<% end %>
+						</div>
+					</div>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+<% end %>

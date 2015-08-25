@@ -7,6 +7,7 @@
 		background-color: #492365;
 		color: white;
 		padding: 20px;
+		width: 100%;
 }
 
 .CDB_HEADER > a:visited {
@@ -17,6 +18,8 @@ div .wrapper {
 	position:inherit;
 	margin-bottom: 100px;
 	width: 250px;
+	margin-left: 20px;
+	margin-right: 15px;
 }
 
 div .CDB_TH_NAME {
@@ -42,13 +45,13 @@ div .CDB_NAME {
 	display: block;
 	background-color: #492365;
 	color: white;
-	font-size: 30px;
+	font-size: 20px;
 	width: 250px;
 }
 
 div.CDB_NAME > a {
 	color: white;
-	font-size: 30px;
+	font-size: 20px;
 }
 
 div .wrapper-content {
@@ -140,13 +143,14 @@ a:hover .CDB_NO_HOVER {
 	padding-left: 15px;
 	background-color: white;
 	width: 200px;
-	left: -200px;
+	left: -210px;
 	height: 500px;
-	position: absolute;
+	position: fixed;
 	top: 140px;
 	float: left;
-	min-height: 85%;
+	min-height: 90%;
 	height: auto !important;
+	box-shadow: 5px 0px 5px grey;
 }
 
 table.Tech td {
@@ -165,5 +169,21 @@ div.modal-content {
 div.CDB_TH_NAME {
 	width: 250px;
 	height: 250px;
+}
+
+.navbar {
+	position: fixed;
+	box-shadow: 10px 0px 5px grey;
+}
+.lock {
+	position: fixed;
+}
+
+.container .well {
+	box-shadow: 10px 10px 5px grey;
+}
+
+.CDB_Shadow {
+	box-shadow: 0px 5px 5px grey;
 }
 
