@@ -1,95 +1,98 @@
 <p id="notice"><%= notice %></p>
 <div class='container'>
-								<div class='well'>
-								
-									<h1 class='text-center'>
-									<%= @classroom.name %>
-									</h1>
+		<div class='well'>
+			<h1 class='text-center'>
+			<%= @classroom.name %>
+			</h1>
+			<% if current_user %>
+				<div class='text-center'>	<%= link_to 'Edit', edit_classroom_path(@classroom) %> </div>
+			<% end %>
+			<div class="text-center col-md-6 col-md-offset-3 CDB_DESC">
+				<p><%= @classroom.description %></p>
+			</div>
+			<div class='row'>
+				<div class='col-md-6 col-md-offset-3'>
+					<table class='table'>
+						<tr class='CDB_BLDG_TH'>
+							<th>Building</th>
+							<th>Seats</th>
+							<th>Technology</th>
+						</tr>
+						<tr class='CDB_TD'>
+							<td>
+						  	<%= Building.find(@classroom.building_id).name %>
+							</td>
+							<td>
+								<%= @classroom.occupancy %></p>
+							</td>
+							<td>
+								<%= @classroom.tech.to_sentence %>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="CDB_CLASS_SHOW row">
+				<table class="CDB_CLASS_TABLE">
+					<tr>
+					<% @count = 0 %>
+					<% for picture in @classroom.pictures %>
+						<% @count += 1%>
+						<td class="CDB_CLASS_CELL" id="<%= picture.name %>">
+							<% if picture.nil? %>
+									No Image
+							<% else %>
+									<a data-toggle="modal" data-target='#<%= picture.name %>'>
+										<%= image_tag picture.image_url(:thumb).to_s  %>
+									</a>
+									<p>
 									<% if current_user %>
-										<div class='text-center'>	<%= link_to 'Edit', edit_classroom_path(@classroom) %> </div>
+									<%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' }, :remote => "true" %>
 									<% end %>
-									<div class="text-center col-md-6 col-md-offset-3 CDB_DESC">
-										<p><%= @classroom.description %></p>
+									</p>
+							<% end %>
+			  				
+						</td>
+					<% if @count % 4 == 0 %>
+							</tr><tr>
+					<% end %>
+					<div id='<%= picture.name %>' class="modal fade" role="dialog">
+						<div class="modal-dialog">
+							<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+										<h4 style='text-align: center'> <%= @classroom.name %> </h4>	
 									</div>
-									<div class='row'>
-									<div class='col-md-6 col-md-offset-3'>
-										<table class='table'>
-											<tr class='CDB_BLDG_TH'>
-												<th>Building</th>
-												<th>Seats</th>
-												<th>Technology</th>
-											</tr>
-											<tr class='CDB_TD'>
-												<td>
-											  	<%= Building.find(@classroom.building_id).name %>
-												</td>
-												<td>
-													<%= @classroom.occupancy %></p>
-												</td>
-												<td>
-													<%= @classroom.tech.to_sentence %>
-												</td>
-											</tr>
-										</table>
-									</div>
-									</div>
-									<div class="CDB_CLASS_SHOW row">
-										<table class="CDB_CLASS_TABLE">
-											<tr>
-										<% @count = 0 %>
-										<% for picture in @classroom.pictures %>
-											<% @count += 1%>
-											<td class="CDB_CLASS_CELL" id="<%= picture.name %>">
-																	<% if picture.nil? %>
-																			No Image
-																	<% else %>
-																			<a data-toggle="modal" data-target='#<%=picture.name%>'>
-																						<%= image_tag picture.image_url(:thumb).to_s  %>
-																			</a>
-																			<p>
-																			<% if current_user %>
-																			<%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' }, :remote => "true" %>
-																			<% end %>
-																			</p>
-																	<% end %>
-								  <div id='<%=picture.name%>' class="modal fade" role="dialog">
-												<div class="modal-dialog">
-																<div class="modal-content">
-																				<div class="modal-header">
-																								<button type="button" class="close" data-dismiss="modal">&times;</button>
-																								<h4 style='text-align: center'> <%= @classroom.name %> </h4>	
-																				</div>
-																				<div class="modal-body">	
-																									<% if picture.nil? %>
-																											No Image
-																									<% else %>
-																										<%= image_tag picture.image_url(:large).to_s %>
-																									<% end %>
-																				</div>
-																</div>
-												</div>
-									</div>
-								</td>
-								<% if @count % 4 == 0 %>
-										</tr><tr>
-								<% end %>
-								<% end %>
-							    <td class="CDB_ADD_BUTTON">
-									<% if current_user %>
-										<%= link_to new_picture_path(:classroom_id => @classroom), class: 'CDB_NO_HOVER' do %>
-											<%= image_tag('add-button-md.png', id: 'AddButton', class: 'center-block') %>
-											<p class='text-center'>Add New Image</p>
+									<div class="modal-body">	
+										<% if picture.nil? %>
+												No Image
+										<% else %>
+											<%= image_tag picture.image_url(:large).to_s %>
 										<% end %>
-									<% end %>
-								</tr>
-							</table>
+									</div>
+							</div>
+						</div>
+					</div>
+				<% end %>
+					    <td class="CDB_ADD_BUTTON">
+							<% if current_user %>
+								<%= link_to new_picture_path(:classroom_id => @classroom), class: 'CDB_NO_HOVER' do %>
+									<%= image_tag('add-button-md.png', id: 'AddButton', class: 'center-block') %>
+									<p class='text-center'>Add New Image</p>
+								<% end %>
+							<% end %>
+						</td>
+					</tr>
+				</table>
 			 </div>
+		</div>
+	
 </div>
-
 <div class="container">
 								<%= link_to classrooms_path do %>
 												<div class="col-xs-2 col-xs-offset-5 well text-center CDB_NEW">Back</div>
 								<% end %>
 </div>
+
 
 
