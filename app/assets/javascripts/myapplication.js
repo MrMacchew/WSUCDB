@@ -22,23 +22,18 @@ $(function() {
 	$('#Filters').click(function(){
 		if ($('#CDB_FILTER').hasClass('showFilter'))
 		{
-			$('#CDB_FILTER').animate({left: '-210px'});
+			$('#CDB_FILTER').animate({left: '-210px'}, { queue: false});
+			$('#filterTag').animate({left: '0px'}, { queue: false});
+			//$('#filterTag').html("<a id='Filters' href='#'>Filters <span class='glyphicon glyphicon-filter'></span></a>");
 			$('#CDB_FILTER').removeClass('showFilter');
 		}
 		else {
-			$('#CDB_FILTER').animate({left: '0px'});
+			$('#filterTag').animate({left: '200px'}, { queue: false});
+			//$('#filterTag').html("<a id='Filters' href='#'>Hide <span class='glyphicon glyphicon-filter'></span></a>");
+			$('#CDB_FILTER').animate({left: '0px'}, { queue: false});
 			$('#CDB_FILTER').addClass('showFilter');
 		}
 	});
-
-	if(top.location.pathname === '/' || top.location.pathname === '/classrooms')
-	{
-		$('#filterTag').show();
-	}
-	else
-	{
-		$('#filterTag').hide();
-	}
 	
 	$('#clearFilters').click(function(){
 		//Clear out all filter settings back to default.

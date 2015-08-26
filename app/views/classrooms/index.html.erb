@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<div id="CDB_FILTER">
+<div>
+	<div id="CDB_FILTER">
 				<%= search_form_for @search, :remote=>"true", url: classrooms_path, :method => :get do |f| %>
 								<div class='field'>
 												<p><strong>Building</strong></p>
@@ -26,6 +27,8 @@
 								<div class="actions"><%= f.submit "Apply" %></div>
 								<div><button id='clearFilters'>Clear</button></div>
 				<% end %>
+	</div>	
+	<div id="filterTag"><a id="Filters" href='#'>Filters <span class='glyphicon glyphicon-filter'></span></a></div>
 </div>
 <div class="container">
 				<% if current_user %>
@@ -35,7 +38,7 @@
 									  	<% end %>
 										<div class='col-md-2'></div>
 										<%= link_to new_building_path do %>
-										<div class='col-md-2 col-sm-5 well CDB_NEW'>New Buidling</div>
+										<div class='col-md-2 col-sm-5 well CDB_NEW'>New <br/> Buidling</div>
 										<% end %>
 										<div class='col-md-3'></div>
 							</div>

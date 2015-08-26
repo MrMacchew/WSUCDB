@@ -7,14 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="CDB_Top">
 <div class="CDB_HEADER">
-	<%= link_to '/' do%>WSU Classroom Database<% end %>
+	<%= link_to '/' do%>
+		<%= image_tag("wsu_logo.png") %></br>
+		Classroom Database
+	<% end %>
 </div>
 <nav class="navbar navbar-default">
 	<div class="container-fluid">
-		<ul class="nav navbar-nav">
-			<li id="filterTag" hidden><a id="Filters" href='#'>Filters <span class='glyphicon glyphicon-filter'></span></a></li>
-		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<li>
 			<% if current_user %>
@@ -23,14 +24,15 @@
 								<li> <%= link_to "Buildings", buildings_path %> </li>
 								<li><a> <%= current_user.email %> </a> </li><li> <%= link_to "Log out", logout_path, method: "delete" %></li>
 				<% else %>
-						<%= link_to "Login <span class='glyphicon glyphicon-user'></span>".html_safe, login_path %></li>
+						<%= link_to "Admin <span class='glyphicon glyphicon-user'></span>".html_safe, login_path %></li>
 				<% end %>
 			</li>
 		</ul>
 	</div>
 </nav>
-
+</div>
+<div id="CDB_CONTENT">
 <%= yield %>
-
+</dv>
 </body>
 </html>
