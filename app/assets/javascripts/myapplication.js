@@ -3,9 +3,9 @@ $(function() {
 		//$(this).css('width', $(this).siblings('img').width()).css('height', $(this).siblings('img').height());
 		//$(this).parent().css('width', $(this).siblings('img').width())
 	});*/
-	$('div.CDB_NAME').each(function(){
+	/*$('div.CDB_NAME').each(function(){
 		$(this).css('width', $(this).siblings('img').width());
-	});
+	});*/
 	/*$('div.CDB_NAME').each(function(){
 		$(this).css('width', $(this).parent().width()-13);
 	})*/
