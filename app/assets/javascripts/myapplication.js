@@ -21,7 +21,7 @@ $(function() {
 	});
 	
 	$('div.CDB_NEW').hover(function(){
-		$(this).css('background-color', 'purple');
+		$(this).css('background-color', '#492365');
 		$(this).css('color', 'white');
 	}, function(){
 		$(this).css('background-color', 'white');

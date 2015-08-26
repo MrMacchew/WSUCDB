@@ -151,6 +151,7 @@ a:hover .CDB_NO_HOVER {
 	min-height: 90%;
 	height: auto !important;
 	box-shadow: 5px 0px 5px grey;
+	z-index: 3;
 }
 
 table.Tech td {

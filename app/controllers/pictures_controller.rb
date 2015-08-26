@@ -67,6 +67,7 @@ class PicturesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to @classroom, notice: 'Picture was successfully destroyed.' }
       format.json { head :no_content }
+      format.js
     end
   end
 

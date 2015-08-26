@@ -21,7 +21,7 @@
 										<% @count = 0 %>
 										<% for picture in @classroom.pictures %>
 											<% @count += 1%>
-											<td class="CDB_CLASS_CELL">
+											<td class="CDB_CLASS_CELL" id="<%= picture.name %>">
 																	<% if picture.nil? %>
 																			No Image
 																	<% else %>
@@ -30,7 +30,7 @@
 																			</a>
 																			<p>
 																			<% if current_user %>
-																			<%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %>
+																			<%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' }, :remote => "true" %>
 																			<% end %>
 																			</p>
 																	<% end %>
@@ -70,9 +70,9 @@
 
 <div class="container">
 								<div class="col-xs-4"></div>
-								<div class="col-xs-2 well text-center CDB_NEW">
-									<%= link_to 'Back', classrooms_path %>
-							 </div>
+								<%= link_to classrooms_path do %>
+												<div class="col-xs-2 well text-center CDB_NEW">Back</div>
+								<% end %>
 							 <div class="col-xs-4"></div>
 </div>
 
