@@ -8,12 +8,30 @@
 									<% if current_user %>
 										<div class='text-center'>	<%= link_to 'Edit', edit_classroom_path(@classroom) %> </div>
 									<% end %>
-									<div class="text-center">
+									<div class="text-center col-md-6 col-md-offset-3 CDB_DESC">
 										<p><%= @classroom.description %></p>
-										<p><strong>Building:</strong> <%= Building.find(@classroom.building_id).name %></p>
-										<p><strong>Seats: </strong><%= @classroom.occupancy %></p>
-										<p><strong>Technology: </strong>
-											<%= @classroom.tech.to_sentence %>
+									</div>
+									<div class='row'>
+									<div class='col-md-6 col-md-offset-3'>
+										<table class='table'>
+											<tr class='CDB_BLDG_TH'>
+												<th>Building</th>
+												<th>Seats</th>
+												<th>Technology</th>
+											</tr>
+											<tr class='CDB_TD'>
+												<td>
+											  	<%= Building.find(@classroom.building_id).name %>
+												</td>
+												<td>
+													<%= @classroom.occupancy %></p>
+												</td>
+												<td>
+													<%= @classroom.tech.to_sentence %>
+												</td>
+											</tr>
+										</table>
+									</div>
 									</div>
 									<div class="CDB_CLASS_SHOW row">
 										<table class="CDB_CLASS_TABLE">
@@ -34,7 +52,7 @@
 																			<% end %>
 																			</p>
 																	<% end %>
-												<div id='<%=picture.name%>' class="modal fade" role="dialog">
+								  <div id='<%=picture.name%>' class="modal fade" role="dialog">
 												<div class="modal-dialog">
 																<div class="modal-content">
 																				<div class="modal-header">
@@ -69,11 +87,9 @@
 </div>
 
 <div class="container">
-								<div class="col-xs-4"></div>
 								<%= link_to classrooms_path do %>
-												<div class="col-xs-2 well text-center CDB_NEW">Back</div>
+												<div class="col-xs-2 col-xs-offset-5 well text-center CDB_NEW">Back</div>
 								<% end %>
-							 <div class="col-xs-4"></div>
 </div>
 
 

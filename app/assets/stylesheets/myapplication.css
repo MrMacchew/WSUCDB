@@ -181,10 +181,14 @@ div.CDB_TH_NAME {
 }
 
 .container .well {
-	box-shadow: 10px 10px 5px grey;
+	box-shadow: 5px 5px 5px grey;
 }
 
 .CDB_Shadow {
 	box-shadow: 0px 5px 5px grey;
+}
+
+.CDB_DESC {
+	font-size: 15px;
 }
 
