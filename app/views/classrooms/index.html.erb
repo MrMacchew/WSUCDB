@@ -28,17 +28,16 @@
 								<div><button id='clearFilters'>Clear</button></div>
 				<% end %>
 	</div>	
-	<div id="filterTag"><a id="Filters" href='#'>Filters <span class='glyphicon glyphicon-filter'></span></a></div>
+	<div id="filterTag"><a id="Filters" href='#'>Filters<span class='glyphicon glyphicon-filter'></span></a></div>
 </div>
 <div class="container">
 				<% if current_user %>
 							<div class='col-md-3'></div>
 										<%= link_to new_classroom_path do %>
-										<div class='col-md-2 col-sm-5 well CDB_NEW'>New Classroom</div>
+										<div class='col-md-2 col-xs-4 well CDB_NEW'>New Classroom</div>
 									  	<% end %>
-										<div class='col-md-2'></div>
 										<%= link_to new_building_path do %>
-										<div class='col-md-2 col-sm-5 well CDB_NEW'>New <br/> Buidling</div>
+										<div class='col-md-2 col-xs-4 col-xs-offset-2 well CDB_NEW'>New <br/> Buidling</div>
 										<% end %>
 										<div class='col-md-3'></div>
 							</div>

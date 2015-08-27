@@ -21,8 +21,7 @@
 						<%= Building.find(classroom.building_id).name %><br/>
 						<%= classroom.name[2,4] %>
 							<% if current_user %>
-								<div class='CDB_ADMIN'>
-								<%= link_to 'Edit', edit_classroom_path(classroom) %> | 
+								<div class='CDB_ADMIN'> 
 								<%= link_to 'Destroy', classroom, method: :delete, data: { confirm: 'Are you sure?' } %>
 							</div>
 						<% end %>

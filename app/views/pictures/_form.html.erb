@@ -11,10 +11,12 @@
     </div>
   <% end %>
 			<p>
-				<div class='file_wrapper'>
-					<%= f.hidden_field :classroom_id %>
-					<%= f.file_field :image %>
-				</div>
+        <div>
+				  <div class='file_wrapper'>
+				  	<%= f.hidden_field :classroom_id %>
+				  	<%= f.file_field :image %>
+				  </div>
+        </div>
 			</p>
 			<div class="actions">
 				<%= f.submit class:  "btn btn-default" %>
