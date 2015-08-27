@@ -1,20 +1,10 @@
 <% if current_user %>
-<%= form_for(@user) do |u| %>
- <% if @user.errors.any? %>
-	<div id="error_explanation">
-	<h2><%= pluralize(@user.errors.count, "error") %> prohibited this site from being saved:</h2>
-<% end %>
-
-<div>
-	<p>
-		<%= u.text_field :first_name, :placeholder => "First name" %>
-		<%= u.text_field :last_name, :placeholder => "Last name" %>
-		<%= u.email_field :email, :placeholder => "Email" %>
-		<%= u.password_field :password, :placeholder => "Password" %>
-	</p>
-</div>
-<%= u.submit "Create" %>
-<% end %>
+	<div class='container'>
+		<div class='well text-center col-md-4 col-md-offset-4'>
+			<h1>New User</h1>
+				<%= render 'form' %>
+		</div>
+	</div>
 <% else %>
 <h1>You are not authorized to see this page</h1>
 <% end %>	
