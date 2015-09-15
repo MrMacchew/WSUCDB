@@ -20,6 +20,10 @@
   	<%= f.label :building_id %>
 		<%= f.select "building_id", options_for_select(Building.all.order('name').collect{ |b| [b.name, b.id] }, @classroom.building_id) %>
 	</div>
+	<div class="field">
+		<%= f.label :contact %>
+		<%= f.select "contact_id", options_for_select(Contact.all.order('last_name').collect{ |c| [c.name, c.id] }, @classroom.contact_id), :include_blank => "None" %>
+	</div>  
   <div class="field">
     <%= f.label :occupancy %><br>
     <%= f.number_field :occupancy %>

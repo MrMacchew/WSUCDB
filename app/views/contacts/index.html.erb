@@ -1,0 +1,53 @@
+<% if current_user %>
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+				<% if current_user %>
+						<%= link_to new_contact_path do %>
+						<div class='col-md-offset-5 col-md-2 col-sm-5 well CDB_NEW'>New Contact</div>
+						<% end %>
+				<% end %>
+</div>
+<div class='container'>
+	<div class='well'>
+		<h1 style="text-align:center">Contacts</h1>
+	</div>
+</div>
+<div class="container"> 
+				<table class="table">
+								<tr class="CDB_BLDG_TH">
+												<th>Email</th>
+												<th>Name</th>
+												<th>Rooms</th>
+								</tr>
+								<% @contacts.each do |contact| %>
+												<tr class='CDB_BLDG_ROW'>
+																<td>
+																				<%= link_to contact.email, edit_contact_path(contact) %>
+																</td>
+																<td>
+																				<%= contact.first_name %> <%= contact.last_name %>
+																<% if current_user %>
+																	<%= link_to 'Edit', edit_contact_path(contact) %> | <%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %>
+																<% end %> 
+																</td>
+																<td>
+																				<% contact.classrooms.each do |classroom| %>
+																						<p>
+																								<%= link_to classroom.name, classroom %>
+																						</p>
+																				<% end %>
+																</td>
+												</tr>
+								<% end %>
+				</table>
+</div>
+
+<div class="container">
+								<div class="col-xs-2 col-xs-offset-5 well text-center CDB_NEW">
+									<%= link_to 'Back', classrooms_path %>
+							 </div>
+</div>
+<% else %>
+<h1>You are not authorized to see this page</h1>
+<% end %>
