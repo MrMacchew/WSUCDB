@@ -19,7 +19,7 @@ $(function() {
 		$('.wrapper').css('margin-bottom', 150);
 	}
 
-	$('#Filters').click(function(){
+/*	$('#Filters').click(function(){
 		if ($('#CDB_FILTER').hasClass('showFilter'))
 		{
 			$('#CDB_FILTER').animate({left: '-210px'}, { queue: false});
@@ -34,7 +34,7 @@ $(function() {
 			$('#CDB_FILTER').addClass('showFilter');
 		}
 	});
-	
+	*/
 	$('#clearFilters').click(function(){
 		//Clear out all filter settings back to default.
 		$('#classroom_search').find('input:checkbox').removeAttr('checked');

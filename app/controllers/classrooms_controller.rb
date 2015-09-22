@@ -15,6 +15,7 @@ class ClassroomsController < ApplicationController
   def show
 		@classroom = Classroom.find(params[:id])
 		@pictures = @classroom.pictures
+		@contact = @classroom.contact_id? ? Contact.find(@classroom.contact_id) : nil
 	end
 
   # GET /classrooms/new

@@ -38,10 +38,8 @@ div .wrapper {
 
 div .CDB_TH_NAME {
 	position: absolute;
-	padding: 15px;
+	padding: 7px;
 	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
 	display: none;
 	background-color: black;
 	color: white;
@@ -52,7 +50,7 @@ div .CDB_TH_NAME {
 
 div .CDB_NAME {
 	position: absolute;
-	padding: 15px;
+	padding: 7px;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
@@ -153,28 +151,18 @@ a:hover .CDB_NO_HOVER {
 }
 
 #CDB_FILTER {
-	padding-top: 10px;
-	padding-left: 15px;
+
 	background-color: white;
-	width: 200px;
-	left: -210px;
-	height: 500px;
-	position: fixed;
-	top: 140px;
-	float: left;
-	min-height: 90%;
-	height: auto !important;
+	height: 100%;
+	min-height: 100%;
 	box-shadow: 5px 0px 5px grey;
-	z-index: 4;
+
 }
 
 #filterTag {
 	background-color: white;
 	padding: 15px;
-	float: left;
-	position: fixed;
 	top: 145px;
-	z-index: 4;
 }
 
 table.Tech td {
@@ -215,3 +203,6 @@ div.CDB_TH_NAME {
 	font-size: 15px;
 }
 
+.filter2 {
+	width: 200px;
+}

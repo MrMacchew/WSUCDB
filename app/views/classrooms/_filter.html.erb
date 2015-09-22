@@ -1,0 +1,50 @@
+	<h3>Filter Rooms</h3>
+	<%= search_form_for @search, :remote=>"true", url: classrooms_path, :method => :get do |f| %>
+	<table class='table'>
+		<tr>
+			<td colspan='2'>
+				<h4>Building</h4>
+
+			<%= f.select "building_id_eq", options_for_select(Building.all.order('name').collect{ |b| [b.name, b.id] }), :include_blank => "Any" %>
+			</td>
+		</tr>
+		<tr>
+			<td colspan='2'>
+				<h4>Room Size</h4>
+				<%= f.number_field :occupancy_gteq, in: 0...200, :style => "width: 7em"  %>
+			</td>
+		</tr>
+		<tr>
+			<td colspan='2'>
+				<h4>Technology:</h4>
+			</tr>
+		</tr>
+		<tr>
+			<td colspan='2'>
+				<%= f.check_box :smartboard_true, include_hidden: false %>Smartboard
+			</td>
+		</tr>
+		<tr>
+			<td colspan='2'><%= f.check_box :pc_true, include_hidden: false %>PC
+			</td>
+		</tr>
+		<tr>
+			<td colspan='2'>
+				<%= f.check_box :projector_true, include_hidden: false %>Projector
+			</td>
+		</tr>
+		<tr>
+			<td colspan='2'>
+				<%= f.check_box :doccam_true, include_hidden: false %>Document Camera
+			</td> 
+		</tr>
+		<tr>
+			<td>
+				<div class="actions"><%= f.submit "Apply" %></div>
+			</td>
+			<td>
+				<button id='clearFilters'>Clear</button>
+			</td>
+		</tr>
+	</table>
+	<% end %>
