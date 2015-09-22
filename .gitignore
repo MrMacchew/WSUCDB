@@ -19,3 +19,5 @@
 public/uploads/picture/image/8/thumb_LL125_2.jpeg
 
 db/development.sqlite3
+
+*.log
