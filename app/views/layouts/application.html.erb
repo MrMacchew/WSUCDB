@@ -23,6 +23,7 @@
 								<li> <%= link_to "Classrooms", classrooms_path %> </li>
 								<li> <%= link_to "Buildings", buildings_path %> </li>
 								<li> <%= link_to "Contacts" , contacts_path %> </li>
+								<li> <%= link_to "Tech Contacts" , tcontacts_path %> </li>
 								<li><a> <%= current_user.email %> </a> </li><li> <%= link_to "Log out", logout_path, method: "delete" %></li>
 				<% else %>
 						<%= link_to "Admin <span class='glyphicon glyphicon-user'></span>".html_safe, login_path %></li>

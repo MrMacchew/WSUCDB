@@ -24,6 +24,10 @@
 		<%= f.label :contact %>
 		<%= f.select "contact_id", options_for_select(Contact.all.order('last_name').collect{ |c| [c.name, c.id] }, @classroom.contact_id), :include_blank => "None" %>
 	</div>  
+	<div class="field">
+		<%= f.label :tcontact %>
+		<%= f.select "tcontact_id", options_for_select(Tcontact.all.order('last_name').collect{ |c| [c.name, c.id] }, @classroom.tcontact_id), :include_blank => "None" %>
+	</div>  
   <div class="field">
     <%= f.label :occupancy %><br>
     <%= f.number_field :occupancy %>

@@ -39,7 +39,11 @@
 					<% else %>
 						<p> No Contact on file </p>
 					<% end %>
-				</div>
+				
+					<% if @classroom.tcontact_id? %>
+									<p>For technical support please contact <%= @tcontact.name %></p>
+					<% end %>	
+				<div class='col-md-3'></div>
 			</div>
 			<div class="CDB_CLASS_SHOW row">
 				<table class="CDB_CLASS_TABLE">

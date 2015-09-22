@@ -3,13 +3,14 @@
 				<% if current_user %>
 							
 										<%= link_to new_classroom_path do %>
-										<div class='col-md-2 col-sm-4 well CDB_NEW'>New Classroom</div>
-									  	<% end %>
-										<div class='col-md-2 col-sm-1'></div>
+											<div class='col-md-2 col-sm-2 well CDB_NEW'>New Classroom</div>
+									  <% end %>
 										<%= link_to new_building_path do %>
-										<div class='col-md-2 col-sm-5 well CDB_NEW'>New <br/> Buidling</div>
+											<div class='col-md-2 col-sm-2 col-sm-offset-1 well CDB_NEW'>New Building</div>
 										<% end %>
-										<div class='col-md-3'></div>
+										<%= link_to new_contact_path do %>
+											<div class='col-md-2 col-sm-2 col-sm-offset-1 well CDB_NEW'>New Contact</div>
+										<% end %>
 							</div>
 				<% end %>
 </div>
