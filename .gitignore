@@ -15,6 +15,7 @@
 /log/*
 !/log/.keep
 /tmp
+public/uploads/picture/image
 
 public/uploads/picture/image/8/thumb_LL125_2.jpeg
 
