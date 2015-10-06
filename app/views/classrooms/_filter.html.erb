@@ -11,7 +11,10 @@
 		<tr>
 			<td colspan='2'>
 				<h4>Room Size</h4>
+				<h5>Minimum</h5>
 				<%= f.number_field :occupancy_gteq, in: 0...200, :style => "width: 7em"  %>
+				<h5>Maximum</h5>
+				<%= f.number_field :occupancy_lteq, in: 0...200, :style => "width: 7em"  %>
 			</td>
 		</tr>
 		<tr>
@@ -36,6 +39,11 @@
 		<tr>
 			<td colspan='2'>
 				<%= f.check_box :doccam_true, include_hidden: false %>Document Camera
+			</td> 
+		</tr>
+		<tr>
+			<td colspan='2'>
+				<%= f.check_box :bluray_true, include_hidden: false %>DVD/Bluray Player
 			</td> 
 		</tr>
 		<tr>

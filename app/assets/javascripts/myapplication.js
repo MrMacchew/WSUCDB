@@ -35,10 +35,12 @@ $(function() {
 		}
 	});
 	*/
-	$('#clearFilters').click(function(){
+	$('#clearFilters').click(function(event){
+		event.preventDefault();
 		//Clear out all filter settings back to default.
 		$('#classroom_search').find('input:checkbox').removeAttr('checked');
 		$('#classroom_search').find('select').val('');
+		$('#classroom_search').find('input[type=number]').val('');
 	});
 });
 	

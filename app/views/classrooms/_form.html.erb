@@ -14,7 +14,7 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :placeholder => "LP205" %>
   </div>
   <div class="field">
   	<%= f.label :building_id %>
@@ -35,7 +35,7 @@
 
 	<div class='field'>
 					<p><%= f.label :description %></p>
-					<%= f.text_area :description %>
+					<%= f.text_area :description, cols: 30, rows: 5 %>
 	</div>
 	<div class="field">
 		<table class="Tech">
