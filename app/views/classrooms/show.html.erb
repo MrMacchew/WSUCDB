@@ -2,7 +2,7 @@
 <div class='container'>
 		<div class='well'>
 			<h1 class='text-center'>
-			<%= @classroom.name %>
+			<%= Building.find(@classroom.building_id).name %> <%=@classroom.name[2,4] %>
 			</h1>
 			<% if current_user %>
 				<div class='text-center'>	<%= link_to 'Edit', edit_classroom_path(@classroom) %> </div>
