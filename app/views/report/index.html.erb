@@ -1,0 +1,58 @@
+<% if current_user %>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 well">
+			<h2>Filters</h2>
+		</div>
+		<div class="col-xs-12 well">
+			<table class="table table-bordered-striped" id="reportTable">
+			<thead>
+				<tr class="CDB_BLDG_TH">
+					<th>Classroom</th>
+					<th>Occupancy</th>
+					<th>Computer</th>
+					<th>Projector</th>
+					<th>Document Camera</th>
+					<th>Smartboard</th>
+					<th>Extron</th>
+					<th>DVD/Bluray</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @classrooms.each do |classroom| %>
+				<tr>
+					<td>
+						<%= Building.find(classroom.building_id).name %> 
+						<%= classroom.name[2,4] %>
+					</td>
+					<td>
+						<%= classroom.occupancy %>
+					</td>
+					<td>
+						<%= classroom.pc ? "Yes" : "No" %>
+					</td>
+					<td>
+						<%= classroom.projector ? "Yes" : "No" %>
+					</td>
+					<td>
+						<%= classroom.doccam ? "Yes" : "No" %>
+					</td>
+					<td>
+						<%= classroom.smartboard ? "Yes" : "No" %>
+					</td>
+					<td>
+						<%= classroom.extron ? "Yes" : "No" %>
+					</td>
+					<td>
+						<%= classroom.bluray ? "Yes" : "No" %>
+					</td>
+				</tr>
+				<% end %>
+			</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<% else %>
+<h1>You are not authorized to see this page</h1>
+<% end %>
